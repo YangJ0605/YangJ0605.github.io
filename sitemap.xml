@@ -10,14 +10,21 @@
   
   <url>
     <loc>https://yangj0605.github.io/</loc>
-    <lastmod>2019-08-13T17:40:18+08:00</lastmod>
+    <lastmod>2019-10-13T22:45:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/post/</loc>
-    <lastmod>2019-08-13T17:40:18+08:00</lastmod>
+    <lastmod>2019-10-13T22:45:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/post/%E4%BD%BF%E7%94%A8hugo%E4%B8%8Egithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2019-10-13T22:45:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
