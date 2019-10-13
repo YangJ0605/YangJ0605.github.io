@@ -9,21 +9,28 @@
   </url>
   
   <url>
-    <loc>https://yangj0605.github.io/post/hugo%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F/</loc>
-    <lastmod>2019-08-13T17:18:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yangj0605.github.io/</loc>
-    <lastmod>2019-08-13T17:18:45+08:00</lastmod>
+    <lastmod>2019-08-13T17:40:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/post/</loc>
+    <lastmod>2019-08-13T17:40:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/post/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2019-08-13T17:40:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/post/hugo%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F/</loc>
     <lastmod>2019-08-13T17:18:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

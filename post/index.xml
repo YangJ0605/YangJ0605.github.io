@@ -6,10 +6,19 @@
     <description>Recent content in Posts on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 13 Aug 2019 17:18:45 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2019 17:40:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第二篇测试博客</title>
+      <link>https://yangj0605.github.io/post/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Tue, 13 Aug 2019 17:40:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</guid>
+      <description>测试主题 使用一个好用的主题~~~ 主题链接：https://github.com/xianmin/hugo-theme-jane/blob/m</description>
+    </item>
     
     <item>
       <title>Hugo的第一篇博客哟</title>
