@@ -6,10 +6,55 @@
     <description>Recent content in Posts on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 14 Aug 2019 22:45:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2019 23:01:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>js学习记录3</title>
+      <link>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/</link>
+      <pubDate>Sun, 25 Aug 2019 23:01:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/</guid>
+      <description>函数 function 函数的声明 1.具名函数 1 2 3 4 function f(x,y){ return x+y } f.name // &amp;#39;f&amp;#39; 2.匿名函数 1 2 3 4 5 var f f = function(x,y){ return x+y } f.name // &amp;#39;f&amp;#39; 3.具名函数赋值 1 2 3 4 var f f = function f2(x,y){ return x+y } f.name</description>
+    </item>
+    
+    <item>
+      <title>js学习记录2</title>
+      <link>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%952/</link>
+      <pubDate>Thu, 22 Aug 2019 21:20:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%952/</guid>
+      <description>数组 Array 数组（array）就是一组有次序的值。每个值的位置都有编号（从0开始），整个数组用方括号表示。 创建数组 1 2 3 4 5 var arr = new Array(); // 创建一个数</description>
+    </item>
+    
+    <item>
+      <title>js学习记录1</title>
+      <link>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951/</link>
+      <pubDate>Tue, 20 Aug 2019 20:20:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951/</guid>
+      <description>本文主要参考阮一峰的JavaScript 标准参考教程。 JavaScript入门 JavaScript 是一种轻量级的脚本语言。所谓“脚本语言”（script lan</description>
+    </item>
+    
+    <item>
+      <title>CSS杂记2</title>
+      <link>https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B02/</link>
+      <pubDate>Fri, 16 Aug 2019 19:20:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B02/</guid>
+      <description>一些常用技巧 文字的水平居中：text-align:center; 容器的水平居中：如 1 2 3 4 div#box{ width:100px; marigin:0 auto; } 文字的垂直居中 单行文字的垂直居中，只要将</description>
+    </item>
+    
+    <item>
+      <title>CSS杂记1</title>
+      <link>https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B01/</link>
+      <pubDate>Thu, 15 Aug 2019 17:40:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B01/</guid>
+      <description>引入CSS的几种方式 行内样式 通过style的属性来写CSS代码。 每一个HTML元素，都有 style、class、id、name、title 属</description>
+    </item>
     
     <item>
       <title>使用hugo与github搭建博客</title>

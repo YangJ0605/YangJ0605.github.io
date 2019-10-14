@@ -6,10 +6,55 @@
     <description>Recent content in Tags on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 14 Aug 2019 22:45:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2019 23:01:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>array</title>
+      <link>https://yangj0605.github.io/tags/array/</link>
+      <pubDate>Sun, 25 Aug 2019 23:01:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/array/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://yangj0605.github.io/tags/javascript/</link>
+      <pubDate>Sun, 25 Aug 2019 23:01:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://yangj0605.github.io/tags/js/</link>
+      <pubDate>Sun, 25 Aug 2019 23:01:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css学习</title>
+      <link>https://yangj0605.github.io/tags/css%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Fri, 16 Aug 2019 19:20:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/css%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>学习记录</title>
+      <link>https://yangj0605.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 16 Aug 2019 19:20:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>

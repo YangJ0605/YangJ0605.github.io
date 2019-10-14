@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CSS杂记1 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="引入CSS的几种方式 行内样式 通过style的属性来写CSS代码。 每一个HTML元素，都有 style、class、id、name、title 属" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B01/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="CSS杂记1" />
+<meta property="og:description" content="引入CSS的几种方式 行内样式 通过style的属性来写CSS代码。 每一个HTML元素，都有 style、class、id、name、title 属" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B01/" />
+<meta property="article:published_time" content="2019-08-15T17:40:18+08:00" />
+<meta property="article:modified_time" content="2019-08-15T17:40:18+08:00" />
+<meta itemprop="name" content="CSS杂记1">
+<meta itemprop="description" content="引入CSS的几种方式 行内样式 通过style的属性来写CSS代码。 每一个HTML元素，都有 style、class、id、name、title 属">
+
+
+<meta itemprop="datePublished" content="2019-08-15T17:40:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-15T17:40:18&#43;08:00" />
+<meta itemprop="wordCount" content="2422">
+
+
+
+<meta itemprop="keywords" content="css学习,学习记录," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS杂记1"/>
+<meta name="twitter:description" content="引入CSS的几种方式 行内样式 通过style的属性来写CSS代码。 每一个HTML元素，都有 style、class、id、name、title 属"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">CSS杂记1</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-15 </span>
+        <div class="post-category">
+            <a href="/categories/css/"> css </a>
+            </div>
+          <span class="more-meta"> 约 2422 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="引入css的几种方式">引入CSS的几种方式</h1>
+
+<ol>
+<li><p>行内样式
+通过style的属性来写CSS代码。
+每一个HTML元素，都有 style、class、id、name、title 属性。
+举例：<p style=“font-size:24px;”></p></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">CSS的字体/文本属性
+Font-size：文字大小
+Font-weight：加粗
+Font-style：斜体
+Color：颜色
+Line-height：行高
+Text-indent：首行缩进
+Text-align：水平对齐
+Letter-spacing：字符间距
+CSS列表
+List-style-type：列表类型，取值：none、circle、 square
+List-style-position：符号位置，取值：inside、outside
+List-style-image：图片路径，举例：list-style-image:url(images/li01.gif);</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>外联式
+通过<code>&lt;link&gt;</code>标记来引入外部的CSS文件(.css)。
+格式：<code>&lt;link href=“CSS的URL” rel=“stylesheet” type=“text/css” /&gt;</code>
+注意：<code>&lt;link&gt;</code> 标记只能放在 <code>&lt;head&gt;</code> 中</p></li>
+
+<li><p>内嵌式
+通过<code>&lt;style&gt;&lt;/style&gt;</code>标签来书写CSS代码。
+只能应用于当前网页，不能被其它网页共享。
+注意：<code>&lt;style&gt;</code>标记可以放在网页的任何地方，但一般放在<code>&lt;head&gt;</code>。</p></li>
+
+<li><p><code>@import URL（../)</code></p></li>
+</ol>
+
+<h1 id="css常用的可以继承的属性">CSS常用的可以继承的属性</h1>
+
+<ul>
+<li><p>字体系列属性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">font-family：字体系列
+font-weight：字体的粗细
+font-size：字体的大小
+font-style：字体的风格</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>文本系列属性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">text-indent：文本缩进
+text-align：文本水平对齐
+line-height：行高
+word-spacing：单词之间的间距
+letter-spacing：中文或者字母之间的间距
+text-transform：控制文本大小写（就是uppercase、lowercase、capitalize这三个）
+color：文本颜色</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>元素可见性：
+<code>visibility：控制元素显示隐藏</code></p></li>
+
+<li><p>列表布局属性：
+<code>list-style：列表风格，包括list-style-type、list-style-image等</code></p></li>
+
+<li><p>光标属性：
+<code>cursor：光标显示为何种形态</code></p></li>
+</ul>
+
+<p><strong>一些小问题：</strong>
+span与span元素直接存在空格无法去掉时，把两个span并列一排。
+inherit 继承属性。</p>
+
+<h1 id="css使用中遇到的一些问题">CSS使用中遇到的一些问题</h1>
+
+<ul>
+<li>给内联非替换元素设置宽高是无效的，设置margin时，左右有效，上下无效。设置padding时，左右有效，而上下padding比较奇葩，内联非替换元素的上下padding会在元素内容盒不动的情况下上下扩展(对比一下，块状元素设置margin或padding时，内容盒子会移动，内联元素设置左右margin和左右padding时，内容盒子也会移动)，设置背景色会看到效果，但是此元素下面的块状元素在计算边距时并不考虑这个上下padding，仍然以这个内联非替换元素的内容盒子的下边作为起点。</li>
+</ul>
+
+<blockquote>
+<p>另外，如果对内联非替换元素(如span)使用了绝对定位(相对定位不可以)或者float，那么这个span元素就和块级元素一样可以设置宽高/margin/padding。</p>
+</blockquote>
+
+<ul>
+<li><p>一个line boxes没有高度 那么是由内部最大的的inline box的 line－height 决定。line-height 默认值为nomal  chrome浏览器的为1.15。</p></li>
+
+<li><p>box-sizing属性border-box，content-box。</p></li>
+</ul>
+
+<blockquote>
+<p>content-box 正常盒模型是指：盒模型的大小包括content，padding，border，并且先做content.正常盒模型的大小会以内容优先自动扩展，内部子元素超过父元素给定的大小，会将父元素撑大。</p>
+
+<p>border-box 怪异盒模型:先做盒。然后添加border，padding，最后做content。即保证盒模型优先，先做盒再放内容，不管内容是否放得下，一般手机上用的更多。俗的说，怪异盒模型中，父元素的盒模型确定，子元素是无法撑开父元素的盒模型，只能在盒模型剩余空间展示</p>
+</blockquote>
+
+<ul>
+<li>position</li>
+</ul>
+
+<blockquote>
+<p>position: relative;相对定位</p>
+
+<blockquote>
+<p>1.不影响元素本身特性（无论区块元素还是内联元素会保留其原本特性）。</p>
+
+<p>2.不会使元素脱离文档流（元素原本位置会被保留，即改变位置也不会占用新位置）。</p>
+
+<p>3.没有定位偏移量时对元素无影响（相对于自身原本位置进行偏移）。</p>
+
+<p>4.提升层级（用z-index样式的值可以改变一个定位元素的层级关系，从而改变元素的覆盖关系，值越大越在上面，z-index只能在position属性值为relative或absolute或fixed的元素上有效。）（两个都为定位元素，后面的会覆盖前面的定位）</p>
+</blockquote>
+
+<p>position: absolute;绝对定位</p>
+
+<blockquote>
+<p>1.使元素完全脱离文档流（在文档流中不再占位）。</p>
+
+<p>2.使内联元素在设置宽高的时候支持宽高（改变内联元素的特性）。</p>
+
+<p>3.使区块元素在未设置宽度时由内容撑开宽度（改变区块元素的特性）。</p>
+
+<p>4.相对于最近一个有定位的父元素偏移（若其父元素没有定位则逐层上找，直到document——页面文档对象）。</p>
+
+<p>5.相对定位一般配合绝对定位使用（将父元素设置相对定位，使其相对于父元素偏移）,提升层级（同相对定位）。</p>
+</blockquote>
+
+<p>position: fixed;固定定位</p>
+
+<blockquote>
+<p>fixed生成固定定位的元素，相对于浏览器窗口进行定位。如果一个div元素使用此定位，width默认的100%会变为auto，由内容决定。</p>
+</blockquote>
+
+<p>position:static：默认值</p>
+
+<p>position: sticky 粘性定位</p>
+
+<blockquote>
+<p>粘性定位，该定位基于用户滚动的位置。它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。</p>
+</blockquote>
+</blockquote>
+
+<ul>
+<li><p>max-width 最大宽度  在布局时尽量不要设置高度。居中可以用padding来搞定。除了div默认的height和width为100%，其他为auto。</p></li>
+
+<li><p>字体图标 icofont.cn  dl dt dd ｛floa：left width:50%｝</p></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-08-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css%E5%AD%A6%E4%B9%A0/">css学习</a>
+          <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/css%E6%9D%82%E8%AE%B02/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">CSS杂记2</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E4%BD%BF%E7%94%A8hugo%E4%B8%8Egithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+            <span class="next-text nav-default">使用hugo与github搭建博客</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/css%E6%9D%82%E8%AE%B01/" class="leancloud_visitors" data-flag-title="CSS杂记1">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

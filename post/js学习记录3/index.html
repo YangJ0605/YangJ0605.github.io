@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>js学习记录3 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="函数 function 函数的声明 1.具名函数 1 2 3 4 function f(x,y){ return x&#43;y } f.name // &amp;#39;f&amp;#39; 2.匿名函数 1 2 3 4 5 var f f = function(x,y){ return x&#43;y } f.name // &amp;#39;f&amp;#39; 3.具名函数赋值 1 2 3 4 var f f = function f2(x,y){ return x&#43;y } f.name" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="js学习记录3" />
+<meta property="og:description" content="函数 function 函数的声明 1.具名函数 1 2 3 4 function f(x,y){ return x&#43;y } f.name // &#39;f&#39; 2.匿名函数 1 2 3 4 5 var f f = function(x,y){ return x&#43;y } f.name // &#39;f&#39; 3.具名函数赋值 1 2 3 4 var f f = function f2(x,y){ return x&#43;y } f.name" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/" />
+<meta property="article:published_time" content="2019-08-25T23:01:18+08:00" />
+<meta property="article:modified_time" content="2019-08-25T23:01:18+08:00" />
+<meta itemprop="name" content="js学习记录3">
+<meta itemprop="description" content="函数 function 函数的声明 1.具名函数 1 2 3 4 function f(x,y){ return x&#43;y } f.name // &#39;f&#39; 2.匿名函数 1 2 3 4 5 var f f = function(x,y){ return x&#43;y } f.name // &#39;f&#39; 3.具名函数赋值 1 2 3 4 var f f = function f2(x,y){ return x&#43;y } f.name">
+
+
+<meta itemprop="datePublished" content="2019-08-25T23:01:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-25T23:01:18&#43;08:00" />
+<meta itemprop="wordCount" content="597">
+
+
+
+<meta itemprop="keywords" content="js,JavaScript,array," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="js学习记录3"/>
+<meta name="twitter:description" content="函数 function 函数的声明 1.具名函数 1 2 3 4 function f(x,y){ return x&#43;y } f.name // &#39;f&#39; 2.匿名函数 1 2 3 4 5 var f f = function(x,y){ return x&#43;y } f.name // &#39;f&#39; 3.具名函数赋值 1 2 3 4 var f f = function f2(x,y){ return x&#43;y } f.name"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">js学习记录3</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-25 </span>
+        <div class="post-category">
+            <a href="/categories/js/"> JS </a>
+            </div>
+          <span class="more-meta"> 约 597 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="函数-function">函数 function</h1>
+
+<h2 id="函数的声明">函数的声明</h2>
+
+<ul>
+<li><p>1.具名函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function f(x,y){
+ return x+y
+}
+f.name // &#39;f&#39;</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>2.匿名函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var f
+f = function(x,y){
+ return x+y
+}
+f.name // &#39;f&#39;</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>3.具名函数赋值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var f
+f = function f2(x,y){ return x+y }
+f.name // &#39;f2&#39;
+console.log(f2) // undefined</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>4.window.Function（全局函数）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var f = new Function(&#39;x&#39;,&#39;y&#39;,&#39;return x+y&#39;)
+f.name // &#34;anonymous&#34;</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>5.箭头函数（es6）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var f = (x,y) =&gt; {
+ return x+y
+}
+var sum = (x,y) =&gt; x+y
+var n2 = n =&gt; n*n</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h2 id="函数的调用">函数的调用</h2>
+
+<ul>
+<li><p>1.fn()  最常见的调用，但是不清楚this</p></li>
+
+<li><p>2.fn.call(asThis,arguments[0],arguments[1],&hellip;) ，这种方法很清楚的知道this是什么。</p></li>
+</ul>
+
+<p><strong>this就是call后面的第一个参数</strong></p>
+
+<h2 id="函数提升">函数提升</h2>
+
+<ul>
+<li><p>在作用域系列里面，提到过函数声明提升（hoisting），函数名和函数体都提升。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">foo(); //1
+function foo(){
+console.log(1);
+}</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<blockquote>
+<p>上面这个代码之所以能够在控制台输出1，就是因为foo()函数声明进行了提升，如下所示</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function foo(){
+    console.log(1);
+}
+foo();</pre></td></tr></table>
+</div>
+</div>
+<h1 id="对象-object">对象 object</h1>
+
+<h2 id="定义">定义</h2>
+
+<blockquote>
+<p>javascript的基本数据类型包括undefined、null、string、boolean、number、object、symbol。对象和其它数据类型不同的是，对象是一种复合值：它将许多值（原始值或其他对象）聚合在一起，可通过名字访问这些值。</p>
+
+<p>对象可以看作是属性的无序属性，每个属性都是一个名值对。属性名字符串，因此我们可以把对象看作是字符串到值的映射。</p>
+</blockquote>
+
+<h2 id="对象的创建">对象的创建</h2>
+
+<ul>
+<li><p>1.new构造函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var person = new Object();
+//如果不给构造函数传递参数可以不加括号 var person = new Object;
+person.name = &#39;bai&#39;;
+person.age = 29;</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>2.字面量的方式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var person = {
+name : &#39;bai&#39;,
+age : 29,
+5 : true
+};</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>3.Object.create()</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var o1 = Object.create({x:1,y:1}); //o1继承了属性x和y
+console.log(o1.x);//1</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-08-25
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/js/">js</a>
+          <a href="/tags/javascript/">JavaScript</a>
+          <a href="/tags/array/">array</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%952/">
+            <span class="next-text nav-default">js学习记录2</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/" class="leancloud_visitors" data-flag-title="js学习记录3">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
