@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>软件安装 on mo白的博客</title>
+    <link>https://yangj0605.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</link>
+    <description>Recent content in 软件安装 on mo白的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 14 Aug 2019 22:45:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://yangj0605.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用hugo与github搭建博客</title>
+      <link>https://yangj0605.github.io/post/%E4%BD%BF%E7%94%A8hugo%E4%B8%8Egithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Wed, 14 Aug 2019 22:45:09 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/%E4%BD%BF%E7%94%A8hugo%E4%B8%8Egithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>今天使用hugo来搭建博客，猜了很多的坑，特来写博客记录一下。 有关Hugo的介绍 它是go语言实现的一个博客生成器，世界上最快的博客生成器，之</description>
+    </item>
+    
+    <item>
+      <title>第二篇测试博客</title>
+      <link>https://yangj0605.github.io/post/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Tue, 13 Aug 2019 17:40:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</guid>
+      <description>测试主题 使用一个好用的主题~~~ 主题链接：https://github.com/xianmin/hugo-theme-jane/blob/m</description>
+    </item>
+    
+  </channel>
+</rss>
