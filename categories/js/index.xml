@@ -6,10 +6,28 @@
     <description>Recent content in JS on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 25 Aug 2019 23:01:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 22:30:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/categories/js/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>js学习记录5</title>
+      <link>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%955/</link>
+      <pubDate>Wed, 28 Aug 2019 22:30:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%955/</guid>
+      <description>JS中的数据类型总共7种，Number，String，Boolean，Symbol，Null，Undefined，Object。 其中前面6种</description>
+    </item>
+    
+    <item>
+      <title>js学习记录4</title>
+      <link>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%954/</link>
+      <pubDate>Tue, 27 Aug 2019 21:08:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%954/</guid>
+      <description>prototype JS通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。 1 2 3 4 5 6 7 8 9 function Cat (name, color) { this.name =</description>
+    </item>
     
     <item>
       <title>js学习记录3</title>

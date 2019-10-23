@@ -6,19 +6,10 @@
     <description>Recent content in array on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 25 Aug 2019 23:01:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 21:20:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/tags/array/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>js学习记录3</title>
-      <link>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/</link>
-      <pubDate>Sun, 25 Aug 2019 23:01:18 +0800</pubDate>
-      
-      <guid>https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/</guid>
-      <description>函数 function 函数的声明 1.具名函数 1 2 3 4 function f(x,y){ return x+y } f.name // &amp;#39;f&amp;#39; 2.匿名函数 1 2 3 4 5 var f f = function(x,y){ return x+y } f.name // &amp;#39;f&amp;#39; 3.具名函数赋值 1 2 3 4 var f f = function f2(x,y){ return x+y } f.name</description>
-    </item>
     
     <item>
       <title>js学习记录2</title>

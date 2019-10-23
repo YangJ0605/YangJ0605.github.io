@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>js学习记录4 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="prototype JS通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。 1 2 3 4 5 6 7 8 9 function Cat (name, color) { this.name =" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%954/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="js学习记录4" />
+<meta property="og:description" content="prototype JS通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。 1 2 3 4 5 6 7 8 9 function Cat (name, color) { this.name =" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%954/" />
+<meta property="article:published_time" content="2019-08-27T21:08:18+08:00" />
+<meta property="article:modified_time" content="2019-08-27T21:08:18+08:00" />
+<meta itemprop="name" content="js学习记录4">
+<meta itemprop="description" content="prototype JS通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。 1 2 3 4 5 6 7 8 9 function Cat (name, color) { this.name =">
+
+
+<meta itemprop="datePublished" content="2019-08-27T21:08:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-27T21:08:18&#43;08:00" />
+<meta itemprop="wordCount" content="970">
+
+
+
+<meta itemprop="keywords" content="js,JavaScript,原型," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="js学习记录4"/>
+<meta name="twitter:description" content="prototype JS通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。 1 2 3 4 5 6 7 8 9 function Cat (name, color) { this.name ="/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">js学习记录4</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-27 </span>
+        <div class="post-category">
+            <a href="/categories/js/"> JS </a>
+            </div>
+          <span class="more-meta"> 约 970 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="prototype">prototype</h1>
+
+<ul>
+<li><p>JS通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function Cat (name, color) {
+this.name = name;
+this.color = color;
+}
+
+var cat1 = new Cat(&#39;大毛&#39;, &#39;白色&#39;);
+
+cat1.name // &#39;大毛&#39;
+cat1.color // &#39;白色&#39;</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<blockquote>
+<p>上面代码中，Cat函数是一个构造函数，函数内部定义了name属性和color属性，所有实例对象（上例是cat1）都会生成这两个属性，即这两个属性会定义在实例对象上面。
+* 通过构造函数为实例对象定义属性，虽然很方便，但是有一个缺点。同一个构造函数的多个实例之间，无法共享属性，从而造成对系统资源的浪费。
+Javascript 规定，每一个构造函数都有一个 prototype 属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。这也就意味着，我们可以把所有对象实例需要共享的属性和方法直接定义在 prototype 对象上。可以节省空间。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function Cat (name, color) {
+  this.name = name;
+  this.color = color;
+}
+
+Cat.prototype.color=&#39;white&#39;;
+
+var cat1 = new Animal(&#39;大毛&#39;);
+var cat2 = new Animal(&#39;二毛&#39;);
+
+cat1.color // &#39;white&#39;
+cat2.color // &#39;white&#39;</pre></td></tr></table>
+</div>
+</div>
+<p>上述代码实现了属性共享，这时所有实例的 color 属性，其实都是同一个内存地址，指向 prototype 对象，因此就提高了运行效率。
+<em>任何函数都具有一个 prototype 属性，该属性是一个对象</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function F () {}
+console.log(F.prototype) // =&gt; object</pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>构造函数的 prototype 对象默认都有一个 constructor 属性，指向 prototype 对象所在函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">F.constructor === F)  // =&gt; true</pre></td></tr></table>
+</div>
+</div>
+<h1 id="proto"><strong>proto</strong></h1>
+
+<p>通过构造函数得到的实例对象内部会包含一个指向构造函数的 prototype 对象的指针 <strong>proto</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var ff = new F()
+console.log(ff.__proto__ === F.prototype) // =&gt; true</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>实例对象可以直接访问原型对象成员。</p></li>
+</ul>
+
+<blockquote>
+<p>总结: - 任何函数都具有一个 prototype 属性，该属性是一个对象
+    - 构造函数的 prototype 对象默认都有一个 constructor 属性，指向 prototype 对象所在函数
+    - 通过构造函数得到的实例对象内部会包含一个指向构造函数的 prototype 对象的指针 <strong>proto</strong>
+    - 所有实例都直接或间接继承了原型对象的成员</p>
+
+<h1 id="原型链">原型链</h1>
+
+<p>JavaScript 规定，所有对象都有自己的原型对象（prototype）。一方面，任何一个对象，都可以充当其他对象的原型；另一方面，由于原型对象也是对象，所以它也有自己的原型。因此，就会形成一个“原型链”（prototype chain）：
+- 先在自己身上找，找到即返回
+- 自己身上找不到，则沿着原型链向上查找，找到即返回
+- 如果一直到原型链的末端还没有找到，则返回 undefined</p>
+</blockquote>
+</blockquote>
+
+<ul>
+<li>修改原型对象时，一般要同时修改constructor属性的指向。</li>
+</ul>
+
+<p><img src="/images/1.png" alt="Image text" />
+<img src="/images/2.png" alt="Image text" />
+<img src="/images/3.png" alt="Image text" />
+<img src="/images/4.png" alt="Image text" />
+<img src="/images/5.png" alt="Image text" />
+<img src="/images/6.png" alt="Image text" />
+<img src="/images/7.png" alt="Image text" />
+<img src="/images/8.png" alt="Image text" />
+<img src="/images/9.png" alt="Image text" />
+<img src="/images/10.png" alt="Image text" />
+<img src="/images/11.png" alt="Image text" /></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-08-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/js/">js</a>
+          <a href="/tags/javascript/">JavaScript</a>
+          <a href="/tags/%E5%8E%9F%E5%9E%8B/">原型</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%955/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">js学习记录5</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/">
+            <span class="next-text nav-default">js学习记录3</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%954/" class="leancloud_visitors" data-flag-title="js学习记录4">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
