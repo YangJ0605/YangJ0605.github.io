@@ -6,10 +6,28 @@
     <description>Recent content in css on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Aug 2019 19:20:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 20:20:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/categories/css/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSS杂记3</title>
+      <link>https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B03/</link>
+      <pubDate>Thu, 05 Sep 2019 20:20:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B03/</guid>
+      <description>1.img中alt与title的区别 alt是图片不能正常显示时候出现的文本提示，title是鼠标西东道元素上的文本提示。 2.纯CSS画一个三</description>
+    </item>
+    
+    <item>
+      <title>flex与grid浅尝</title>
+      <link>https://yangj0605.github.io/post/flex%E4%B8%8Egrid/</link>
+      <pubDate>Fri, 30 Aug 2019 23:10:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/flex%E4%B8%8Egrid/</guid>
+      <description>flex布局-弹性盒模型 相比传统的CSS布局，flex布局用惯了真是太爽了，什么水平垂直居中，真的不要太简单，下面就简单的记录一下学习fle</description>
+    </item>
     
     <item>
       <title>CSS杂记2</title>

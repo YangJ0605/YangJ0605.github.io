@@ -6,7 +6,7 @@
     <description>Recent content on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Aug 2019 22:30:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 20:20:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,12 +14,28 @@
     <item>
       <title>About</title>
       <link>https://yangj0605.github.io/about/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      <pubDate>Tue, 13 Aug 2019 21:38:52 +0800</pubDate>
       
       <guid>https://yangj0605.github.io/about/</guid>
-      <description>Hugo is a static site engine written in Go.
-It makes use of a variety of open source projects including:
- Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
+      <description>一款hugo搭建的个人使用博客~~~</description>
+    </item>
+    
+    <item>
+      <title>CSS杂记3</title>
+      <link>https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B03/</link>
+      <pubDate>Thu, 05 Sep 2019 20:20:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B03/</guid>
+      <description>1.img中alt与title的区别 alt是图片不能正常显示时候出现的文本提示，title是鼠标西东道元素上的文本提示。 2.纯CSS画一个三</description>
+    </item>
+    
+    <item>
+      <title>flex与grid浅尝</title>
+      <link>https://yangj0605.github.io/post/flex%E4%B8%8Egrid/</link>
+      <pubDate>Fri, 30 Aug 2019 23:10:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/flex%E4%B8%8Egrid/</guid>
+      <description>flex布局-弹性盒模型 相比传统的CSS布局，flex布局用惯了真是太爽了，什么水平垂直居中，真的不要太简单，下面就简单的记录一下学习fle</description>
     </item>
     
     <item>
@@ -110,6 +126,15 @@ It makes use of a variety of open source projects including:
       
       <guid>https://yangj0605.github.io/post/hugo%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%93%9F/</guid>
       <description>Hello 开始用hugo写博客了哟</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yangj0605.github.io/post/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/test/</guid>
+      <description>Documentbody {height: 100vh;}.parent::after {position: relative;width: 300px;height: 200px;top: 50%;left: 50%;margin-left: -150px; margin-top: -100px;background: green;}</description>
     </item>
     
   </channel>

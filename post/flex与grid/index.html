@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>flex与grid浅尝 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="flex布局-弹性盒模型 相比传统的CSS布局，flex布局用惯了真是太爽了，什么水平垂直居中，真的不要太简单，下面就简单的记录一下学习fle" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/flex%E4%B8%8Egrid/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="flex与grid浅尝" />
+<meta property="og:description" content="flex布局-弹性盒模型 相比传统的CSS布局，flex布局用惯了真是太爽了，什么水平垂直居中，真的不要太简单，下面就简单的记录一下学习fle" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/flex%E4%B8%8Egrid/" />
+<meta property="article:published_time" content="2019-08-30T23:10:18+08:00" />
+<meta property="article:modified_time" content="2019-08-30T23:10:18+08:00" />
+<meta itemprop="name" content="flex与grid浅尝">
+<meta itemprop="description" content="flex布局-弹性盒模型 相比传统的CSS布局，flex布局用惯了真是太爽了，什么水平垂直居中，真的不要太简单，下面就简单的记录一下学习fle">
+
+
+<meta itemprop="datePublished" content="2019-08-30T23:10:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-30T23:10:18&#43;08:00" />
+<meta itemprop="wordCount" content="1294">
+
+
+
+<meta itemprop="keywords" content="CSS,flex,grid," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="flex与grid浅尝"/>
+<meta name="twitter:description" content="flex布局-弹性盒模型 相比传统的CSS布局，flex布局用惯了真是太爽了，什么水平垂直居中，真的不要太简单，下面就简单的记录一下学习fle"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">flex与grid浅尝</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-30 </span>
+        <div class="post-category">
+            <a href="/categories/css/"> CSS </a>
+            </div>
+          <span class="more-meta"> 约 1294 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="flex布局-弹性盒模型">flex布局-弹性盒模型</h1>
+
+<p><strong>相比传统的CSS布局，flex布局用惯了真是太爽了，什么水平垂直居中，真的不要太简单，下面就简单的记录一下学习flex布局的一些体会~~</strong></p>
+
+<h2 id="flex-容器-container-的属性">flex 容器（container）的属性</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">flex-direction  方向（决定主轴的方向） 属性有row（水平，从左向右，默认） column（垂直，从上到下） row-reverse（水平，从右向左） column-reverse（垂直，从下到上）
+
+flex-wrap 换行 属性有 nowrap | wrap | wrap-reverse
+
+flex-flow  上面两个的简写（个人很少用，习惯性记住前面两个）例如：flex-flow: row nowrap
+
+justify-content 主轴方向的对齐方式 属性有 flex-start(默认，假设主轴方向为水平就是从左向右) | flex-end（假设主轴方向为水平就是从右向左） | center（主轴方向居中） | space-between（所有的间隙分布在盒子的中间,都相等） | space-around（每个盒子左右两边的间隙一样）
+
+align-items   侧抽方向的对齐方式 属性有stretch（默认，当没有设置高度的时候，元素将默认占满容器的高度） | flex-start(从上开始向下排列) | flex-end（从下到上） | center （居中）
+
+一般来说，对一个弹性盒子来说，设置上，面两个属性为center就居中了
+ 
+align-content 这个用的较少，针对多行、多列的，属性有stretch | flex-start | flex-end | center | space-between | space-around</pre></td></tr></table>
+</div>
+</div>
+<h2 id="flex-中元素的属性">flex 中元素的属性</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">flex-grow 增长比例，一般如空间过多时，默认等比增长
+
+flex-shrink 收缩比例，一般空间不够时，默认等比收缩
+
+order 代表顺序，数值越小越靠前，值相同时，以dom中元素排列为准</pre></td></tr></table>
+</div>
+</div>
+<p><strong>有兴趣的话，大家可以去看看<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">阮一峰老师的flex布局教学</a>，上面很多实例</strong></p>
+
+<h1 id="grid-网格-布局">grid（网格）布局</h1>
+
+<p><strong>这个布局神奇的很，你只要负责把表区域分好，然后往里面放内容就好</strong></p>
+
+<p>使一个元素变成grid布局<code>display:flex</code></p>
+
+<p><em>注意：容器里面的水平区域称为&rdquo;行&rdquo;（row），垂直区域称为&rdquo;列&rdquo;（column）,设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-等设置都将失效。</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">grid-template-columns   设置列，写几个就有几列
+grid-template-rows      设置行，写几个就有几行
+grid-template-areas     设置区域的名字，例如
+{
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas: &#39;a b c&#39;
+                       &#39;d e f&#39;
+                       &#39;g h i&#39;;
+}
+上面代码创造了一个3行3列的网格，每个元素的行高列宽都是100px；
+ 列的名字用一个引号包起来，中间空格，不同行需在另外一个引号</pre></td></tr></table>
+</div>
+</div>
+<h3 id="fr关键字">fr关键字</h3>
+
+<blockquote>
+<p>如下代码:</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">{
+.parent {
+background: blue;
+width: 400px;
+height: 100px;
+display: grid;
+grid-template-rows: auto 1fr auto;
+grid-template-areas:&#39;one&#39; &#39;two&#39; &#39;three&#39;;                      
+        }
+.son1 {
+grid-area: one;
+background: yellow;
+height: 20px;
+}
+.son2 {
+grid-area: two;
+background: red;
+}
+.son3 {
+grid-area: three;
+background: green;
+height: 10px;
+
+}</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<blockquote>
+<p>上面代码创建了一个三行的网格，三行的名字分别为one two three 设置中间那行为1fr，那么假如其他儿子元素不设置高度，父元素就会被中间的元素占满，假如设置了高度，剩下的全是名字为two的区域的。</p>
+</blockquote>
+</blockquote>
+
+<p><strong>fr是相对的，假如两个元素一个设置1fr，另一个2fr，那么2fr的一定会是1fr的两倍</strong></p>
+
+<p><strong>grid布局是一个非常强大的布局，这里只是简单的使用，更详细的教程课阅读<a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html">阮一峰老师的grid布局教程</a></strong></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-08-30
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css/">CSS</a>
+          <a href="/tags/flex/">flex</a>
+          <a href="/tags/grid/">grid</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/css%E6%9D%82%E8%AE%B03/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">CSS杂记3</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/js%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%955/">
+            <span class="next-text nav-default">js学习记录5</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/flex%E4%B8%8Egrid/" class="leancloud_visitors" data-flag-title="flex与grid浅尝">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CSS杂记3 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="1.img中alt与title的区别 alt是图片不能正常显示时候出现的文本提示，title是鼠标西东道元素上的文本提示。 2.纯CSS画一个三" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B03/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="CSS杂记3" />
+<meta property="og:description" content="1.img中alt与title的区别 alt是图片不能正常显示时候出现的文本提示，title是鼠标西东道元素上的文本提示。 2.纯CSS画一个三" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/css%E6%9D%82%E8%AE%B03/" />
+<meta property="article:published_time" content="2019-09-05T20:20:18+08:00" />
+<meta property="article:modified_time" content="2019-09-05T20:20:18+08:00" />
+<meta itemprop="name" content="CSS杂记3">
+<meta itemprop="description" content="1.img中alt与title的区别 alt是图片不能正常显示时候出现的文本提示，title是鼠标西东道元素上的文本提示。 2.纯CSS画一个三">
+
+
+<meta itemprop="datePublished" content="2019-09-05T20:20:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-05T20:20:18&#43;08:00" />
+<meta itemprop="wordCount" content="1706">
+
+
+
+<meta itemprop="keywords" content="css学习,学习记录," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS杂记3"/>
+<meta name="twitter:description" content="1.img中alt与title的区别 alt是图片不能正常显示时候出现的文本提示，title是鼠标西东道元素上的文本提示。 2.纯CSS画一个三"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">CSS杂记3</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-05 </span>
+        <div class="post-category">
+            <a href="/categories/css/"> css </a>
+            </div>
+          <span class="more-meta"> 约 1706 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p><strong>1.img中alt与title的区别</strong></p>
+
+<blockquote>
+<p>alt是图片不能正常显示时候出现的文本提示，title是鼠标西东道元素上的文本提示。</p>
+</blockquote>
+
+<p><strong>2.纯CSS画一个三角形</strong></p>
+
+<blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">        height: 0;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20x solid transparent;
+        border-right: 20px solid transparent;</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>主要利用border</p>
+</blockquote>
+</blockquote>
+
+<p><strong>3. div的居中问题</strong></p>
+
+<blockquote>
+<p>a.水平方向</p>
+
+<blockquote>
+<p>已知宽度，block元素 ，margin:0 auto属性。或者绝对定位的居中，上下左右都为0，margin为auto</p>
+</blockquote>
+
+<p>水平垂直居中</p>
+
+<blockquote>
+<p>a.利用定位来实现</p>
+</blockquote>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">{
+    
+position: relative;
+width: 300px;
+height: 200px;
+top: 50%;
+left: 50%;
+margin-left: -150px; 
+margin-top: -100px;
+background: green;
+}</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<blockquote>
+<p>b.利用flex布局</p>
+</blockquote>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">{
+display: flex;
+align-items: center; 
+justify-content: center;
+}</pre></td></tr></table>
+</div>
+</div>
+<p><strong>4. CSS盒子模型</strong></p>
+
+<blockquote>
+<p>css盒模型本质是一个盒子,封装周围的html元素,它包括margin、border、padding、content（width、height）</p>
+
+<blockquote>
+<p>盒子模型分为两种:</p>
+
+<blockquote>
+<p>a.标准盒子模型</p>
+
+<blockquote>
+<p>模型成员:margin、border、padding、content</p>
+
+<p>content不包括其他成员.</p>
+</blockquote>
+
+<p>b.怪异盒子模型(IE盒子模型)</p>
+
+<blockquote>
+<p>模型成员:margin、border、padding、content</p>
+
+<p>content包含border和padding</p>
+</blockquote>
+</blockquote>
+
+<p>给元素设置box-sizing可改变盒子模型的类型</p>
+
+<blockquote>
+<p>a.标准盒子模型:box-sizing:content-box;</p>
+
+<p>b.怪异盒子模型:box-sizing:border-box;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<p><strong>5.清除浮动</strong></p>
+
+<ul>
+<li><p>clear清除浮动（添加空div法）在浮动元素下方添加空div,并给该元素写css样式 {clear:both;height:0;overflow:hidden;}</p></li>
+
+<li><p>给浮动元素父级设置高度</p></li>
+
+<li><p>父级同时浮动（需要给父级同级元素添加浮动）</p></li>
+
+<li><p>父级设置成inline-block，其margin: 0 auto居中方式失效</p></li>
+
+<li><p>给父级添加overflow:hidden 清除浮动方法</p></li>
+
+<li><p>最为推荐的为伪类清除浮动方式，给浮动元素的父类加上如下类</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.clearfix::after{
+content:&#34;.&#34;;       
+display:block;       
+height:0;       
+clear:both;       
+visibility:hidden; 
+}
+
+.clearfix {
+zoom:1 //兼容IE
+}</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<p><strong>6.display:none 和 visibility: hidden的区别</strong></p>
+
+<ul>
+<li><p>display:none 隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，就当他从来不存在。</p></li>
+
+<li><p>visibility:hidden 隐藏对应的元素，但是在文档布局中仍保留原来的空间。</p></li>
+</ul>
+
+<p><strong>7.CSS中 link 和@import 的区别是？</strong></p>
+
+<ul>
+<li><p>link属于HTML标签，而@import是CSS提供的页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载</p></li>
+
+<li><p>import只在IE5以上才能识别，而link是HTML标签，无兼容问题</p></li>
+
+<li><p>link方式的样式的权重 高于@import的权重.</p></li>
+</ul>
+
+<p><strong>8.position的absolute与fixed共同点与不同点</strong></p>
+
+<ul>
+<li>共同点：</li>
+</ul>
+
+<blockquote>
+<p>改变行内元素的呈现方式，display被置为block让元素脱离普通流，不占据空间默认会覆盖到非定位元素上</p>
+</blockquote>
+
+<ul>
+<li>不同点：</li>
+</ul>
+
+<blockquote>
+<p>absolute的&rdquo;根元素&rdquo;是可以设置的,fixed的&rdquo;根元素&rdquo;固定为浏览器窗口。当你滚动网页，fixed元素与浏览器窗口之间的距离是不变的。</p>
+</blockquote>
+
+<p><strong>9.精灵图（雪碧图）</strong></p>
+
+<blockquote>
+<p>多个图片集成在一个图片中的图</p>
+
+<p>使用雪碧图可以减少网络请求的次数，加快允许的速度</p>
+
+<p>通过background-position，去定位图片在屏幕的哪个位置</p>
+</blockquote>
+
+<p><strong>10.transition和animation的区别</strong></p>
+
+<ul>
+<li><p>transition是过度属性，强调过度，他的实现需要触发一个事件（比如鼠标移动上去，焦点，点击等）才执行动画。它类似于flash的补间动画，设置一个开始关键帧，一个结束关键帧。</p></li>
+
+<li><p>animation是动画属性，他的实现不需要触发事件，设定好时间之后可以自己执行，且可以循环一个动画。他也类似于flash的补间动画，但是他可以设置多个关键帧（用@keyframe定义）完成动画。</p></li>
+</ul>
+
+<p><strong>11.理解 HTML 语义化</strong></p>
+
+<blockquote>
+<p>最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。后来有了专门的写 CSS 的前端，他们会使用 DIV + CSS 布局，主要是用 float 和绝对定位布局。稍微符合了 HTML 语义化。再后来，前端专业化，知道HTML 的各个标签的用法，于是会使用恰当的标签来展示内容，而不是傻傻的全用 div，会尽量使用 h1、ul、p、main、header 等标签。语义化的好处是已读、有利于SEO等</p>
+</blockquote>
+
+<p><strong>12.meta viewport</strong></p>
+
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</code></p>
+
+<blockquote>
+<p>作用：控制页面在移动端不要缩小显示。</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-09-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css%E5%AD%A6%E4%B9%A0/">css学习</a>
+          <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/flex%E4%B8%8Egrid/">
+            <span class="next-text nav-default">flex与grid浅尝</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/css%E6%9D%82%E8%AE%B03/" class="leancloud_visitors" data-flag-title="CSS杂记3">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
