@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ES6常用知识记录 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="ES6常用的知识点记录 1.let与const ES6推荐使用let声明局部变量，相比之前的var（无论声明在何处，都会被视为声明在函数的最顶部" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ES6常用知识记录" />
+<meta property="og:description" content="ES6常用的知识点记录 1.let与const ES6推荐使用let声明局部变量，相比之前的var（无论声明在何处，都会被视为声明在函数的最顶部" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" />
+<meta property="article:published_time" content="2019-09-10T20:15:18+08:00" />
+<meta property="article:modified_time" content="2019-09-10T20:15:18+08:00" />
+<meta itemprop="name" content="ES6常用知识记录">
+<meta itemprop="description" content="ES6常用的知识点记录 1.let与const ES6推荐使用let声明局部变量，相比之前的var（无论声明在何处，都会被视为声明在函数的最顶部">
+
+
+<meta itemprop="datePublished" content="2019-09-10T20:15:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-10T20:15:18&#43;08:00" />
+<meta itemprop="wordCount" content="1531">
+
+
+
+<meta itemprop="keywords" content="JS,ES6," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ES6常用知识记录"/>
+<meta name="twitter:description" content="ES6常用的知识点记录 1.let与const ES6推荐使用let声明局部变量，相比之前的var（无论声明在何处，都会被视为声明在函数的最顶部"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ES6常用知识记录</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-10 </span>
+        <div class="post-category">
+            <a href="/categories/js/"> JS </a>
+            </div>
+          <span class="more-meta"> 约 1531 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="es6常用的知识点记录">ES6常用的知识点记录</h1>
+
+<p><strong>1.let与const</strong></p>
+
+<p><em>ES6推荐使用let声明局部变量，相比之前的var（无论声明在何处，都会被视为声明在函数的最顶部）</em></p>
+
+<ul>
+<li><p>let与var的区别</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var x =&#39;我是全局&#39;
+
+{
+let x= &#39;我是局部&#39;
+console.log(x) //我是局部
+}
+console.log(x) //我是全局</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<blockquote>
+<blockquote>
+<p>let声明的变量是局部变量，存在块级作用域。</p>
+</blockquote>
+
+<p>let表示声明变量，而const表示声明常量，两者都为块级作用域；const 声明的变量都会被认为是常量，意思就是它的值被设置完成后就不能再修改了：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const a = 1
+a = 0 //报错</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>如果const的是一个对象，对象所包含的值是可以被修改的。抽象一点儿说，就是对象所指向的地址没有变就行：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const student = { name: &#39;cc&#39; }
+
+student.name = &#39;yy&#39;;// 不报错
+student  = { name: &#39;yy&#39; };// 报错</pre></td></tr></table>
+</div>
+</div>
+<p><strong>注意点：</strong></p>
+
+<blockquote>
+<p>1.let 关键词声明的变量不具备变量提升（hoisting）特性</p>
+
+<p>2.let 和 const 声明只在最靠近的一个块中（花括号内）有效</p>
+
+<p>3.当使用常量 const 声明时，请使用大写变量，如：CAPITAL_CASING</p>
+
+<p>4.const 在声明时必须被赋值</p>
+</blockquote>
+
+<p><strong>2.箭头函数</strong></p>
+
+<p><em>ES6 中，箭头函数就是函数的一种简写形式，使用括号包裹参数，跟随一个 =&gt;，紧接着是函数体；</em></p>
+
+<p><em>箭头函数最直观的三个特点。</em></p>
+
+<blockquote>
+<p>1.不需要 function 关键字来创建函数</p>
+
+<p>2.省略 return 关键字</p>
+
+<p>3.继承当前上下文的 this 关键字</p>
+</blockquote>
+
+<p><strong>3.函数的参数默认值</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// ES6之前，当未传入参数时，text = &#39;default&#39;；
+function printText(text) {
+    text = text || &#39;default&#39;;
+    console.log(text);
+}
+
+// ES6；
+function printText(text = &#39;default&#39;) {
+    console.log(text);
+}
+
+printText(&#39;hello&#39;); // hello
+printText();// default</pre></td></tr></table>
+</div>
+</div>
+<p><strong>4.Spread / Rest 操作符</strong></p>
+
+<blockquote>
+<p>Spread / Rest 操作符指的是 &hellip;，具体是 Spread 还是 Rest 需要看上下文语境。</p>
+</blockquote>
+
+<ul>
+<li><p>当被用于函数传参时，是一个 Rest 操作符：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function foo(...args) {
+console.log(args);
+}
+foo( 1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>当被用于迭代器中时，它是一个 Spread 操作符：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function foo(x,y,z) {
+console.log(x,y,z);
+}
+ 
+let arr = [1,2,3];
+foo(...arr); // 1 2 3</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<p><strong>5.对象和数组解构</strong></p>
+
+<ul>
+<li><p>对象解构</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">//原始获取对象属性时的写法，需要不停的声明变量来获取
+const Asher = {
+name: &#39;Asher Zhang&#39;,
+age: 5,
+family: {
+    mother: &#39;North Zhang&#39;,
+    father: &#39;Richard Zhang&#39;,
+    brother: &#39;Howard Zhang&#39;
+}
+}
+const name = Asher.name;           //Asher Zhang
+const age = Asher.age;                //5
+
+--------------------------------------------------
+
+//对象结构的写法，意思是先声明变量name和age，然后在对象Asher中寻找同名属性，最后将属性值赋值给变量name和age
+const {name,age} = Asher;    //Asher Zhang;5
+
+
+//如果在此之前已经声明过变量name了，会报错
+//加上()之后就可以了，因为不加()时，浏览器会将{}解析为代码块，而不是解构
+let name = &#39;&#39;; 
+const {name,age} = Asher;        //Identifier &#39;name&#39; has already been declared
+({name,age} = Asher);           //Asher
+
+
+//嵌套中出现已声明的变量再次被声明使用，同样会报错，所以...
+//这里意思是先声明一个变量f，然后找到father所对应的值并将其赋值给f
+const father = &#39;&#39;;
+const {father:f,mother,brother} = Asher.family;          
+console.log(f);               //Richard Zhang
+
+
+---------------------------------------------------
+
+//获取对象上并没有的属性会返回undefined
+const {father,mother,brother,sister} = Asher.family;
+console.log(sister);          //undefined
+
+//可以给没有的属性加上默认值
+const {father,mother,brother,sister = &#39;have no sister&#39;} = Asher.family;
+console.log(sister);             //have no sister
+
+//默认值只在该属性真的没有值的或值为undefined的时候才会返回
+const Asher = {
+name: &#39;Asher Zhang&#39;,
+age: 5,
+family: {
+    mother: &#39;North Zhang&#39;,
+    father: &#39;Richard Zhang&#39;,
+    brother: &#39;Howard Zhang&#39;,
+    sister: null
+}
+}
+
+const {father,mother,brother,sister = &#39;have no sister&#39;} = Asher.family;
+console.log(sister);             //null</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>数组解构</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const fruits = [&#39;apple&#39;,&#39;coconut&#39;,&#39;mango&#39;,&#39;durian&#39;];
+
+//原始获取数组项的写法
+const durian = fruits[3];      //durian
+
+//数组解构写法，和对象解构类似
+const [apple,coconut] = fruits;
+console.log(apple,coconut);           //apple coconut  
+//获取间隔位置的值
+const [,coconut,,durian] = fruits;
+console.log(coconut,durian);      //coconut durian 
+
+//获取数组第一项以及其他项，其他项会新生成一个数组
+const [apple,...others] = fruits;
+console.log(apple);      //apple
+console.log(others);    //[&#34;coconut&#34;, &#34;mango&#34;, &#34;durian&#34;]
+//rest参数只能作为 最后一个参数使用
+const [apple,...others,durian] = fruits;     //Rest element must be last element
+//同对象，获取数组中没有的值返回undefined
+const cont = [&#39;Asher&#39;,&#39;23&#39;];
+
+const [name,age,lan] = cont;
+console.log(name,age,lan);     //Asher 23 undefined
+
+//同对象，一样可以给没有的项加默认值
+const [name,age,lan = &#39;JS&#39;] = cont;
+console.log(name,age,lan);     //Asher 23 undefined
+
+//undefined只在数组项没有内容的时候可用
+const cont = [&#39;Asher&#39;,&#39;23&#39;,null];
+
+const [name,age,lan = &#39;PHP&#39;] = cont;
+console.log(name,age,lan);     //Asher 23 null
+
+//应用场景：利用数组解构交换变量值
+let a = 100;
+let b = 20;
+
+[a,b] = [b,a]
+console.log(a,b);       //20 100</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-09-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/js/">JS</a>
+          <a href="/tags/es6/">ES6</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%861/">
+            <span class="next-text nav-default">JS知识点整理1</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" class="leancloud_visitors" data-flag-title="ES6常用知识记录">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

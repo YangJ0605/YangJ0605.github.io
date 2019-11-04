@@ -6,7 +6,7 @@
     <description>Recent content on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 05 Sep 2019 20:20:18 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Sep 2019 20:15:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,24 @@
       
       <guid>https://yangj0605.github.io/about/</guid>
       <description>一款hugo搭建的个人使用博客~~~</description>
+    </item>
+    
+    <item>
+      <title>ES6常用知识记录</title>
+      <link>https://yangj0605.github.io/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</link>
+      <pubDate>Tue, 10 Sep 2019 20:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</guid>
+      <description>ES6常用的知识点记录 1.let与const ES6推荐使用let声明局部变量，相比之前的var（无论声明在何处，都会被视为声明在函数的最顶部</description>
+    </item>
+    
+    <item>
+      <title>JS知识点整理1</title>
+      <link>https://yangj0605.github.io/post/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%861/</link>
+      <pubDate>Sat, 07 Sep 2019 20:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%861/</guid>
+      <description>JavaScript知识点整理系列1 1.typeof和instance of 相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空， 或者</description>
     </item>
     
     <item>
@@ -134,7 +152,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yangj0605.github.io/post/test/</guid>
-      <description>Documentbody {height: 100vh;}.parent::after {position: relative;width: 300px;height: 200px;top: 50%;left: 50%;margin-left: -150px; margin-top: -100px;background: green;}</description>
+      <description>Documentbody {height: 100vh;}.parent {position: relative;width: 300px;height: 200px;background: blue;/* opacity: 0; */z-index: -5555;}.sibling {width: 200px;height: 200px;background: pink;}</description>
     </item>
     
   </channel>

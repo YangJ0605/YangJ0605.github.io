@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JS知识点整理1 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="JavaScript知识点整理系列1 1.typeof和instance of 相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空， 或者" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%861/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="JS知识点整理1" />
+<meta property="og:description" content="JavaScript知识点整理系列1 1.typeof和instance of 相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空， 或者" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%861/" />
+<meta property="article:published_time" content="2019-09-07T20:15:18+08:00" />
+<meta property="article:modified_time" content="2019-09-07T20:15:18+08:00" />
+<meta itemprop="name" content="JS知识点整理1">
+<meta itemprop="description" content="JavaScript知识点整理系列1 1.typeof和instance of 相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空， 或者">
+
+
+<meta itemprop="datePublished" content="2019-09-07T20:15:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-07T20:15:18&#43;08:00" />
+<meta itemprop="wordCount" content="1108">
+
+
+
+<meta itemprop="keywords" content="JS,知识点整理总结," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS知识点整理1"/>
+<meta name="twitter:description" content="JavaScript知识点整理系列1 1.typeof和instance of 相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空， 或者"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">JS知识点整理1</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-07 </span>
+        <div class="post-category">
+            <a href="/categories/js/"> JS </a>
+            </div>
+          <span class="more-meta"> 约 1108 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="javascript知识点整理系列1">JavaScript知识点整理系列1</h1>
+
+<p><strong>1.typeof和instance of</strong></p>
+
+<ul>
+<li><p>相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空， 或者是什么类型的。</p></li>
+
+<li><p>不同点：</p></li>
+</ul>
+
+<blockquote>
+<p>typeof</p>
+
+<blockquote>
+<p>1.返回值是一个字符串， 用来说明变量的数据类型。</p>
+
+<p>2.typeof 一般只能返回如下几个结果： number, boolean, string, function, object, undefined。</p>
+
+<p>3.对于 Array, Null 等特殊对象使用 typeof 一律返回 object， 这正是 typeof 的局限性。</p>
+
+<p>4.除 Function 外的所有构造函数的类型都是 &lsquo;object&rsquo;<br />
+<code>typeof new String //'string'</code>  <code>typeof new Function //'function'</code></p>
+</blockquote>
+
+<p>instanceof</p>
+
+<blockquote>
+<p>1.返回值为布尔值;</p>
+
+<p>2.instanceof 用于判断一个变量是否属于某个对象的实例。</p>
+
+<p>3.用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"> var a = new Array();
+a instanceof Array // true
+a instanceof Object // true</pre></td></tr></table>
+</div>
+</div></blockquote>
+</blockquote>
+
+<p><strong>2.深浅拷贝</strong></p>
+
+<ul>
+<li>1.浅拷贝</li>
+</ul>
+
+<blockquote>
+<blockquote>
+<p>当一个数组全是基本类型的时候</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var arr = [&#39;old&#39;, 1, true, null, undefined];
+
+var new_arr = arr.concat();
+
+new_arr[0] = &#39;new&#39;;
+
+console.log(arr) // [&#34;old&#34;, 1, true, null, undefined]
+console.log(new_arr) // [&#34;new&#34;, 1, true, null, undefined]</pre></td></tr></table>
+</div>
+</div></blockquote>
+</blockquote>
+
+<p><strong>如果数组元素是基本类型，就会拷贝一份，互不影响</strong></p>
+
+<blockquote>
+<blockquote>
+<p>当数组中嵌套对象时</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var arr = [{old: &#39;old&#39;}, [&#39;old&#39;]];
+
+var new_arr = arr.concat();
+
+arr[0].old = &#39;new&#39;;
+arr[1][0] = &#39;new&#39;;
+
+console.log(arr) // [{old: &#39;new&#39;}, [&#39;new&#39;]]
+console.log(new_arr) // [{old: &#39;new&#39;}, [&#39;new&#39;]]</pre></td></tr></table>
+</div>
+</div></blockquote>
+</blockquote>
+
+<p><strong>如果数组元素是对象或者数组，就会只拷贝对象和数组的引用，这样我们无论在新旧数组进行了修改，两者都会发生变化。</strong></p>
+
+<p><strong>把这种复制引用的拷贝方法称之为浅拷贝，与之对应的就是深拷贝，深拷贝就是指完全的拷贝一个对象，即使嵌套了对象，两者也相互分离，修改一个对象的属性，也不会影响另一个。</strong></p>
+
+<ul>
+<li>2.深拷贝</li>
+</ul>
+
+<blockquote>
+<p>实现深拷贝的最简单的方法</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var arr = [&#39;old&#39;, 1, true, [&#39;old1&#39;, &#39;old2&#39;], {old: 1}]
+
+var new_arr = JSON.parse( JSON.stringify(arr) ) //这样两个数组完全就是独立的，互不影响</pre></td></tr></table>
+</div>
+</div>
+<p><strong>但是这种方法不能拷贝函数</strong></p>
+
+<p><strong>浅拷贝的实现</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var shallowCopy = function(obj) {
+    // 只拷贝对象
+    if (typeof obj !== &#39;object&#39;) return;
+    // 根据obj的类型判断是新建一个数组还是对象
+    var newObj = obj instanceof Array ? [] : {};
+    // 遍历obj，并且判断是obj的属性才拷贝
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            newObj[key] = obj[key];
+        }
+    }
+    return newObj;
+}</pre></td></tr></table>
+</div>
+</div>
+<p><strong>深拷贝的实现</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var deepCopy = function(obj) {
+    if (typeof obj !== &#39;object&#39;) return;
+    var newObj = obj instanceof Array ? [] : {};
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            newObj[key] = typeof obj[key] === &#39;object&#39; ? deepCopy(obj[key]) : obj[key];
+        }
+    }
+    return newObj;
+}</pre></td></tr></table>
+</div>
+</div>
+<p><strong>3.==和===区别是什么？</strong></p>
+
+<blockquote>
+<p>== 返回一个布尔值；相等返回true，不相等返回false； 允许不同数据类型之间的比较； 如果是不同类型的数据进行，会默认进行数据类型之间的转换； 如果是对象数据类型的比较，比较的是空间地址</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+<p>=== 只要数据类型不一样，就返回false；</p>
+</blockquote>
+
+<p><strong>4.call bind apply 的区别</strong></p>
+
+<blockquote>
+<p>call() 和apply()的第一个参数相同，就是指定的对象。这个对象就是该函数的执行上下文。</p>
+
+<p>call()和apply()的区别就在于，两者之间的参数。</p>
+
+<blockquote>
+<p>call()在第一个参数之后的 后续所有参数就是传入该函数的值。</p>
+
+<p>apply() 只有两个参数，第一个是对象，第二个是数组，这个数组就是该函数的参数。</p>
+</blockquote>
+
+<p>bind() 方法和前两者不同在于： bind() 方法会返回执行上下文被改变的函数而不会立即执行，而前两者是直接执行该函数。它的参数和call()相同。</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-09-07
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/js/">JS</a>
+          <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86%E6%80%BB%E7%BB%93/">知识点整理总结</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ES6常用知识记录</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/css%E6%9D%82%E8%AE%B03/">
+            <span class="next-text nav-default">CSS杂记3</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%861/" class="leancloud_visitors" data-flag-title="JS知识点整理1">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

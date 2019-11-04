@@ -6,10 +6,28 @@
     <description>Recent content in js on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Aug 2019 22:30:18 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Sep 2019 20:15:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/tags/js/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ES6常用知识记录</title>
+      <link>https://yangj0605.github.io/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</link>
+      <pubDate>Tue, 10 Sep 2019 20:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</guid>
+      <description>ES6常用的知识点记录 1.let与const ES6推荐使用let声明局部变量，相比之前的var（无论声明在何处，都会被视为声明在函数的最顶部</description>
+    </item>
+    
+    <item>
+      <title>JS知识点整理1</title>
+      <link>https://yangj0605.github.io/post/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%861/</link>
+      <pubDate>Sat, 07 Sep 2019 20:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%861/</guid>
+      <description>JavaScript知识点整理系列1 1.typeof和instance of 相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空， 或者</description>
+    </item>
     
     <item>
       <title>js学习记录5</title>
