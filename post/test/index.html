@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,27 +10,35 @@
         body {
             height: 100vh;
         }
+
         .parent {
-           position: relative;
-           width: 300px;
-           height: 200px;
-           background: blue;
-            
-           z-index: -5555;
-        }
-        .sibling {
-            width: 200px;
+
+            width: 300px;
             height: 200px;
-            background: pink;
+            background: blue;
+            overflow: hidden;
         }
-        
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin-top: 50px;
+        }
     </style>
 </head>
-<body>
-    <div class="parent"></div>
-    <div class="sibling"></div>
-        
 
-    
+<body>
+    <div class="parent">
+        <div class="son"></div>
+    </div>
+
+
+    <script>
+        
+    </script>
+
+
 </body>
+
 </html>

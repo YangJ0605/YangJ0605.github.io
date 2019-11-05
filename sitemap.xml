@@ -10,28 +10,56 @@
   
   <url>
     <loc>https://yangj0605.github.io/categories/</loc>
-    <lastmod>2019-09-30T20:15:18+08:00</lastmod>
+    <lastmod>2019-10-04T21:15:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/tags/es6/</loc>
+    <lastmod>2019-10-04T21:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/</loc>
-    <lastmod>2019-09-30T20:15:18+08:00</lastmod>
+    <lastmod>2019-10-04T21:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/post/</loc>
-    <lastmod>2019-09-30T20:15:18+08:00</lastmod>
+    <lastmod>2019-10-04T21:15:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/categories/promise/</loc>
+    <lastmod>2019-10-04T21:15:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/tags/promise/</loc>
+    <lastmod>2019-10-04T21:15:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/post/promiseajax%E5%88%9D%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-10-04T21:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/tags/</loc>
-    <lastmod>2019-09-30T20:15:18+08:00</lastmod>
+    <lastmod>2019-10-04T21:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -60,13 +88,6 @@
   <url>
     <loc>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
     <lastmod>2019-09-30T20:15:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yangj0605.github.io/tags/es6/</loc>
-    <lastmod>2019-09-10T20:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

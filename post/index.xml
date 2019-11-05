@@ -6,10 +6,19 @@
     <description>Recent content in Posts on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Sep 2019 20:15:18 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Oct 2019 21:15:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>promise初使用</title>
+      <link>https://yangj0605.github.io/post/promiseajax%E5%88%9D%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 04 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/promiseajax%E5%88%9D%E4%BD%BF%E7%94%A8/</guid>
+      <description>Promise 1.了解Promise Promise 是一个异步操作返回的对象，用来传递异步操作的消息。 2.使用Promise 1 2 3 4 5 6 7 8 9 10 let promise = new Promise(function (resolve, reject) { res</description>
+    </item>
     
     <item>
       <title>web性能优化</title>
@@ -152,7 +161,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yangj0605.github.io/post/test/</guid>
-      <description>Documentbody {height: 100vh;}.parent {position: relative;width: 300px;height: 200px;background: blue;/* opacity: 0; */z-index: -5555;}.sibling {width: 200px;height: 200px;background: pink;}</description>
+      <description>Documentbody {height: 100vh;}.parent {width: 300px;height: 200px;background: blue;overflow: hidden;}.son {width: 100px;height: 100px;background: pink;margin-top: 50px;}</description>
     </item>
     
   </channel>

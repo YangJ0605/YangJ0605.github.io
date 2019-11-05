@@ -6,10 +6,19 @@
     <description>Recent content in Categories on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Sep 2019 20:15:18 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Oct 2019 21:15:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>promise</title>
+      <link>https://yangj0605.github.io/categories/promise/</link>
+      <pubDate>Fri, 04 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/categories/promise/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>性能优化</title>
