@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>按值传递 on mo白的博客</title>
+    <link>https://yangj0605.github.io/tags/%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92/</link>
+    <description>Recent content in 按值传递 on mo白的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 12 Oct 2019 21:15:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://yangj0605.github.io/tags/%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>按值传递</title>
+      <link>https://yangj0605.github.io/post/%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92/</link>
+      <pubDate>Sat, 12 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92/</guid>
+      <description>定义 在《JavaScript高级程序设计》第三版 4.1.3，讲到传递参数： ECMAScript中所有函数的参数都是按值传递的。 什么是按值传递</description>
+    </item>
+    
+  </channel>
+</rss>

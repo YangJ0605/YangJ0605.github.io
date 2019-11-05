@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>闭包 on mo白的博客</title>
+    <link>https://yangj0605.github.io/tags/%E9%97%AD%E5%8C%85/</link>
+    <description>Recent content in 闭包 on mo白的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 12 Oct 2019 21:15:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://yangj0605.github.io/tags/%E9%97%AD%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>闭包初识</title>
+      <link>https://yangj0605.github.io/post/%E9%97%AD%E5%8C%85%E5%88%9D%E8%AF%86/</link>
+      <pubDate>Sat, 12 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/%E9%97%AD%E5%8C%85%E5%88%9D%E8%AF%86/</guid>
+      <description>定义 MDN 对闭包的定义为： 闭包是指那些能够访问自由变量的函数。 举个例子： 1 2 3 4 5 6 7 var a = 1; function foo() { console.log(a); } foo(); foo 函数可以访问变量 a，但是 a 既不是 foo 函</description>
+    </item>
+    
+  </channel>
+</rss>

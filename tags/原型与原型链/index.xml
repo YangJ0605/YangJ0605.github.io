@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>原型与原型链 on mo白的博客</title>
+    <link>https://yangj0605.github.io/tags/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+    <description>Recent content in 原型与原型链 on mo白的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 10 Oct 2019 20:15:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://yangj0605.github.io/tags/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>原型与原型链</title>
+      <link>https://yangj0605.github.io/post/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <pubDate>Thu, 10 Oct 2019 20:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <description>构造函数创建对象 1 2 3 4 5 6 7 8 9 10 function Person() { } var person = new Person(); console.log(person.__proto__ === Person.prototype) // true console.log(Person.prototype.constructor === Person) // true // 顺便学习一个ES5的方法,可以获得对象的原型 console.log(Object.getPrototypeOf(person) === Person.prototype) // true 原型链 1 2</description>
+    </item>
+    
+  </channel>
+</rss>
