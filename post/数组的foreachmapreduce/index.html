@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>数组的一些方法 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&amp;lt;array.length;i&#43;&#43;){ x(array[i],i) } } //调用" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="数组的一些方法" />
+<meta property="og:description" content="forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&lt;array.length;i&#43;&#43;){ x(array[i],i) } } //调用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/" />
+<meta property="article:published_time" content="2019-10-19T21:15:18+08:00" />
+<meta property="article:modified_time" content="2019-10-19T21:15:18+08:00" />
+<meta itemprop="name" content="数组的一些方法">
+<meta itemprop="description" content="forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&lt;array.length;i&#43;&#43;){ x(array[i],i) } } //调用">
+
+
+<meta itemprop="datePublished" content="2019-10-19T21:15:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-19T21:15:18&#43;08:00" />
+<meta itemprop="wordCount" content="567">
+
+
+
+<meta itemprop="keywords" content="面试,数组," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数组的一些方法"/>
+<meta name="twitter:description" content="forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&lt;array.length;i&#43;&#43;){ x(array[i],i) } } //调用"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">数组的一些方法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-10-19 </span>
+        <div class="post-category">
+            <a href="/categories/js/"> JS </a>
+            <a href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/"> 新知识 </a>
+            </div>
+          <span class="more-meta"> 约 567 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="foreach-方法对数组的每个元素执行一次提供的函数">forEach() 方法对数组的每个元素执行一次提供的函数。</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var array1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+
+array1.forEach(function(element) {
+  console.log(element);
+});</pre></td></tr></table>
+</div>
+</div>
+<p>原理:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function forEach(array,x){
+    for(let i=0;i&lt;array.length;i++){
+        x(array[i],i)
+    }
+}
+//调用
+forEach([1,2,3],(i)=&gt;{console.log(i)})
+打印出：1 2 3
+---------
+var obj = {0:&#39;a&#39;,1:&#39;b&#39;,length:2}
+
+obj.forEach=function(x){
+    for(let i=0;i&lt;this.length;i++){
+        x(this[i],i)
+    }
+}
+obj.forEach((val,key)=&gt;{console.log(val,key)})
+
+打印出：a 0
+        b 1</pre></td></tr></table>
+</div>
+</div>
+<h1 id="map-方法创建一个新数组-其结果是该数组中的每个元素都调用一个提供的函数后返回的结果">map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var array1 = [1, 4, 9, 16];
+
+
+const map1 = array1.map(x =&gt; x * 2);
+
+console.log(map1);
+
+//[2, 8, 18, 32]</pre></td></tr></table>
+</div>
+</div>
+<h1 id="filter-方法创建一个新数组-其包含通过所提供函数实现的测试的所有元素">filter() 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var words = [&#39;spray&#39;, &#39;limit&#39;, &#39;elite&#39;, &#39;exuberant&#39;, &#39;destruction&#39;, &#39;present&#39;];
+
+const result = words.filter(word =&gt; word.length &gt; 6);
+
+console.log(result);
+
+//打印出[&#34;exuberant&#34;, &#34;destruction&#34;, &#34;present&#34;]</pre></td></tr></table>
+</div>
+</div>
+<h1 id="array的reduce-把一个函数作用在这个array的-x1-x2-x3-上-这个函数必须接收两个参数-reduce-把结果继续和序列的下一个元素做累积计算">Array的reduce()把一个函数作用在这个Array的[x1, x2, x3&hellip;]上，这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算。</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) =&gt; accumulator + currentValue;
+
+//假如reduce中只有一个函数，那么函数中的第一个值就是数组的第一项，第二个值就是第二项；如果reduce中有一个初始值，那么函数中的第一个值为初始值，第二个值为数组的第一项。然后，第二项变成第一项，以此类推。
+
+console.log(array1.reduce(reducer));
+ // 1 + 2 + 3 + 4 =10
+
+console.log(array1.reduce(reducer, 5)); //初始结果为5
+// 5+1+2+3+4=15</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">map用reduce表示
+
+a=[1,2,3]
+var b = a.reduce((pre,next)=&gt;{
+    console.log(pre) //[],[2],[2,4]
+    pre.push(next*2) 
+    return pre
+},[])
+
+console.log(b) // [2,4,6]
+
+filter 用reduce表示
+
+a=[1,2,3,4,5,6,7,8,9,10]
+
+var b= a.reduce((pre,next)=&gt;{
+    if(next%2===0){
+        pre.push(next)
+    }
+    return pre
+},[])
+
+console.log(b) //[2,4,6,8,10]</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-10-19
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
+          <a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/es6%E4%B9%8Bset/">
+            <span class="next-text nav-default">es6之set</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/" class="leancloud_visitors" data-flag-title="数组的一些方法">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

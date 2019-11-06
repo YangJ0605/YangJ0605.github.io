@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>set on mo白的博客</title>
+    <link>https://yangj0605.github.io/tags/set/</link>
+    <description>Recent content in set on mo白的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Oct 2019 22:15:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://yangj0605.github.io/tags/set/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>es6之set</title>
+      <link>https://yangj0605.github.io/post/es6%E4%B9%8Bset/</link>
+      <pubDate>Fri, 18 Oct 2019 22:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/es6%E4%B9%8Bset/</guid>
+      <description>set是ES6中新增的类型，和数组类似，唯一不同在于该类型不会有重复的数据，一般常用来对数据进行去重操作。 一、声明 let set = new Set();即创建</description>
+    </item>
+    
+  </channel>
+</rss>

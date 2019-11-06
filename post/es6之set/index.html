@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>canvas使用 - mo白的博客</title>
+  <title>es6之set - mo白的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="mo白" /><meta name="description" content="canvas 标签 &amp;lt;canvas width=&amp;quot;600&amp;quot; height=&amp;quot;400&amp;quot; id=&amp;quot;canvas&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt; 不给宽高的话默认是300&#43;150 怎么用 1 2 3 4 //拿到canvas var canvas = document.getElementById(&amp;#34;canvas&amp;#34;); //创建画图工具 var context = canvas.getContext(&amp;#34;2d&amp;#34;); 相关的api及用法 1 2 3 4 5" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="mo白" /><meta name="description" content="set是ES6中新增的类型，和数组类似，唯一不同在于该类型不会有重复的数据，一般常用来对数据进行去重操作。 一、声明 let set = new Set();即创建" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.58.3 with theme even" />
 
 
-<link rel="canonical" href="https://yangj0605.github.io/post/canvas/" />
+<link rel="canonical" href="https://yangj0605.github.io/post/es6%E4%B9%8Bset/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,26 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="canvas使用" />
-<meta property="og:description" content="canvas 标签 &lt;canvas width=&quot;600&quot; height=&quot;400&quot; id=&quot;canvas&quot;&gt;&lt;/canvas&gt; 不给宽高的话默认是300&#43;150 怎么用 1 2 3 4 //拿到canvas var canvas = document.getElementById(&#34;canvas&#34;); //创建画图工具 var context = canvas.getContext(&#34;2d&#34;); 相关的api及用法 1 2 3 4 5" />
+<meta property="og:title" content="es6之set" />
+<meta property="og:description" content="set是ES6中新增的类型，和数组类似，唯一不同在于该类型不会有重复的数据，一般常用来对数据进行去重操作。 一、声明 let set = new Set();即创建" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://yangj0605.github.io/post/canvas/" />
-<meta property="article:published_time" content="2019-10-15T22:15:18+08:00" />
-<meta property="article:modified_time" content="2019-10-15T22:15:18+08:00" />
-<meta itemprop="name" content="canvas使用">
-<meta itemprop="description" content="canvas 标签 &lt;canvas width=&quot;600&quot; height=&quot;400&quot; id=&quot;canvas&quot;&gt;&lt;/canvas&gt; 不给宽高的话默认是300&#43;150 怎么用 1 2 3 4 //拿到canvas var canvas = document.getElementById(&#34;canvas&#34;); //创建画图工具 var context = canvas.getContext(&#34;2d&#34;); 相关的api及用法 1 2 3 4 5">
+<meta property="og:url" content="https://yangj0605.github.io/post/es6%E4%B9%8Bset/" />
+<meta property="article:published_time" content="2019-10-18T22:15:18+08:00" />
+<meta property="article:modified_time" content="2019-10-18T22:15:18+08:00" />
+<meta itemprop="name" content="es6之set">
+<meta itemprop="description" content="set是ES6中新增的类型，和数组类似，唯一不同在于该类型不会有重复的数据，一般常用来对数据进行去重操作。 一、声明 let set = new Set();即创建">
 
 
-<meta itemprop="datePublished" content="2019-10-15T22:15:18&#43;08:00" />
-<meta itemprop="dateModified" content="2019-10-15T22:15:18&#43;08:00" />
-<meta itemprop="wordCount" content="310">
+<meta itemprop="datePublished" content="2019-10-18T22:15:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-18T22:15:18&#43;08:00" />
+<meta itemprop="wordCount" content="359">
 
 
 
-<meta itemprop="keywords" content="面试,canvas," />
+<meta itemprop="keywords" content="面试,set," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="canvas使用"/>
-<meta name="twitter:description" content="canvas 标签 &lt;canvas width=&quot;600&quot; height=&quot;400&quot; id=&quot;canvas&quot;&gt;&lt;/canvas&gt; 不给宽高的话默认是300&#43;150 怎么用 1 2 3 4 //拿到canvas var canvas = document.getElementById(&#34;canvas&#34;); //创建画图工具 var context = canvas.getContext(&#34;2d&#34;); 相关的api及用法 1 2 3 4 5"/>
+<meta name="twitter:title" content="es6之set"/>
+<meta name="twitter:description" content="set是ES6中新增的类型，和数组类似，唯一不同在于该类型不会有重复的数据，一般常用来对数据进行去重操作。 一、声明 let set = new Set();即创建"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -124,14 +124,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">canvas使用</h1>
+      <h1 class="post-title">es6之set</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-10-15 </span>
+        <span class="post-time"> 2019-10-18 </span>
         <div class="post-category">
-            <a href="/categories/htm5/"> htm5 </a>
+            <a href="/categories/js/"> JS </a>
+            <a href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/"> 新知识 </a>
             </div>
-          <span class="more-meta"> 约 310 字 </span>
+          <span class="more-meta"> 约 359 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -141,117 +142,57 @@
     <div class="post-content">
       
 
-<h1 id="canvas">canvas</h1>
+<p><strong>set是ES6中新增的类型，和数组类似，唯一不同在于该类型不会有重复的数据，一般常用来对数据进行去重操作。</strong></p>
 
-<h2 id="标签">标签</h2>
+<h2 id="一-声明">一、声明</h2>
 
-<p><code>&lt;canvas width=&quot;600&quot; height=&quot;400&quot; id=&quot;canvas&quot;&gt;&lt;/canvas&gt; 不给宽高的话默认是300+150</code></p>
+<p><code>let set = new Set();即创建了一个空的set</code></p>
 
-<h2 id="怎么用">怎么用</h2>
+<h2 id="二-赋值">二、赋值</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">//拿到canvas
-var canvas = document.getElementById(&#34;canvas&#34;);
-//创建画图工具
-var context = canvas.getContext(&#34;2d&#34;);</pre></td></tr></table>
+<pre class="chroma">let set = new Set([1,2,3,4])
+console.log(set) //输出一个对象，属性0存着1，属性1存着2，....,length为4 （一个伪数组）
+
+let set = new Set([1,2,3,4,2,2,3,4,1,5])
+console.log(set)  //输出Set { 1, 2, 3, 4, 5 }  ,自动去重
+
+ </pre></td></tr></table>
 </div>
 </div>
-<h2 id="相关的api及用法">相关的api及用法</h2>
+<h2 id="三-属性">三、属性</h2>
+
+<p>size属性求set集合的大小(长度)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">//画线
-context.moveTo(100, 100);
-context.lineTo(300, 100);
-context.lineTo(300, 200);
-
-//画第二条线
-//画第二条线
-context.moveTo(100, 300);
-context.lineTo(300, 300);
-
-//最后要描边才会出效果
-context.stroke();
-
-//创建一张新的玻璃纸
-context.beginPath();    
-//画第三条线
-context.moveTo(500, 100);
-context.lineTo(500, 300);
-
-//只要执行stroke，都会玻璃纸上的图形重复印刷一次
-context.stroke();
-
-//填充
-context.fill();
-
-//设置描边色
-context.strokeStyle = &#34;red&#34;; //颜色的写法和css写法是一样的
-context.stroke();
-
-//填充
-//设置填充色
-context.fillStyle = &#34;yellowgreen&#34;;
-context.fill();
-
-//把路径闭合
-context.closePath();
-
-//设置线条的粗细， 不需要加px
-context.lineWidth = 15;
-//线条的头部的设置
-context.lineCap = &#34;round&#34;; //默认是butt， 记住round</pre></td></tr></table>
+<pre class="chroma">let set = new Set([1,2,3,4])
+set.size===4</pre></td></tr></table>
 </div>
 </div>
-<p>详细：<a href="https://www.cnblogs.com/oorx/p/8109082.html">请点击</a></p>
+<h2 id="四-方法">四、方法</h2>
+
+<p>1.add方法，表示新增一个元素到set中。</p>
+
+<p><code>set.add('100') 则输出Set { 1, 2, 3, 4, '100' },注意是字符串！</code></p>
+
+<p>2.delete方法，表示删除一个元素，返回的结果为true或者false。</p>
+
+<p>3.has方法，表示判断某个元素是否在set这个集合中，返回值为true，false。</p>
+
+<p>4.clear方法表示清除集合中所有的元素。没有任何返回值。直接清除元素</p>
 
     </div>
 
@@ -263,7 +204,7 @@ context.lineCap = &#34;round&#34;; //默认是butt， 记住round</pre></td></tr
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-10-15
+        2019-10-18
         
     </span>
   </p>
@@ -273,16 +214,16 @@ context.lineCap = &#34;round&#34;; //默认是butt， 记住round</pre></td></tr
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
-          <a href="/tags/canvas/">canvas</a>
+          <a href="/tags/set/">set</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/javascript%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/">
+        <a class="prev" href="/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">JavaScript经典题目</span>
+            <span class="prev-text nav-default">数组的一些方法</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92/">
-            <span class="next-text nav-default">按值传递</span>
+        <a class="next" href="/post/%E6%A0%87%E7%AD%BE%E6%A8%A1%E6%9D%BF/">
+            <span class="next-text nav-default">标签模板</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -292,7 +233,7 @@ context.lineCap = &#34;round&#34;; //默认是butt， 记住round</pre></td></tr
         </div>
         
 
-  <span id="/post/canvas/" class="leancloud_visitors" data-flag-title="canvas使用">
+  <span id="/post/es6%E4%B9%8Bset/" class="leancloud_visitors" data-flag-title="es6之set">
 		<span class="post-meta-item-text">文章阅读量 </span>
 		<span class="leancloud-visitors-count">0</span>
 		<p></p>

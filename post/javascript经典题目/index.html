@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JavaScript经典题目 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="记录一些做错的题 1 2 3 4 5 6 7 8 9 10 const shape = { radius: 10, diameter() { return this.radius * 2; }, perimeter: () =&amp;gt; 2 * Math.PI * this.radius }; shape.diameter(); shape.perimeter(); A: 20 and 62.83185307179586 B: 20 and NaN C: 20 and 63 D: NaN and 63 请注意，diameter" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/javascript%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="JavaScript经典题目" />
+<meta property="og:description" content="记录一些做错的题 1 2 3 4 5 6 7 8 9 10 const shape = { radius: 10, diameter() { return this.radius * 2; }, perimeter: () =&gt; 2 * Math.PI * this.radius }; shape.diameter(); shape.perimeter(); A: 20 and 62.83185307179586 B: 20 and NaN C: 20 and 63 D: NaN and 63 请注意，diameter" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/javascript%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/" />
+<meta property="article:published_time" content="2019-10-17T21:15:18+08:00" />
+<meta property="article:modified_time" content="2019-10-17T21:15:18+08:00" />
+<meta itemprop="name" content="JavaScript经典题目">
+<meta itemprop="description" content="记录一些做错的题 1 2 3 4 5 6 7 8 9 10 const shape = { radius: 10, diameter() { return this.radius * 2; }, perimeter: () =&gt; 2 * Math.PI * this.radius }; shape.diameter(); shape.perimeter(); A: 20 and 62.83185307179586 B: 20 and NaN C: 20 and 63 D: NaN and 63 请注意，diameter">
+
+
+<meta itemprop="datePublished" content="2019-10-17T21:15:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-17T21:15:18&#43;08:00" />
+<meta itemprop="wordCount" content="2976">
+
+
+
+<meta itemprop="keywords" content="面试,JavaScript经典题目," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript经典题目"/>
+<meta name="twitter:description" content="记录一些做错的题 1 2 3 4 5 6 7 8 9 10 const shape = { radius: 10, diameter() { return this.radius * 2; }, perimeter: () =&gt; 2 * Math.PI * this.radius }; shape.diameter(); shape.perimeter(); A: 20 and 62.83185307179586 B: 20 and NaN C: 20 and 63 D: NaN and 63 请注意，diameter"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">JavaScript经典题目</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-10-17 </span>
+        <div class="post-category">
+            <a href="/categories/js/"> JS </a>
+            <a href="/categories/%E6%8E%98%E9%87%91/"> 掘金 </a>
+            </div>
+          <span class="more-meta"> 约 2976 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="记录一些做错的题">记录一些做错的题</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const shape = {
+  radius: 10,
+  diameter() {
+    return this.radius * 2;
+  },
+  perimeter: () =&gt; 2 * Math.PI * this.radius
+};
+
+shape.diameter();
+shape.perimeter();</pre></td></tr></table>
+</div>
+</div>
+<p>A: 20 and 62.83185307179586</p>
+
+<p>B: 20 and NaN</p>
+
+<p>C: 20 and 63</p>
+
+<p>D: NaN and 63</p>
+
+<p>请注意，diameter是普通函数，而perimeter是箭头函数。</p>
+
+<p>对于箭头函数，this关键字指向是它所在上下文（定义时的位置）的环境，与普通函数不同！ 这意味着当我们调用perimeter时，它不是指向shape对象，而是指其定义时的环境（window）。没有值radius属性，返回undefined。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">class Chameleon {
+  static colorChange(newColor) {
+    this.newColor = newColor;
+  }
+
+  constructor({ newColor = &#34;green&#34; } = {}) {
+    this.newColor = newColor;
+  }
+}
+
+const freddie = new Chameleon({ newColor: &#34;purple&#34; });
+freddie.colorChange(&#34;orange&#34;);</pre></td></tr></table>
+</div>
+</div>
+<p>A: orange</p>
+
+<p>B: purple</p>
+
+<p>C: green</p>
+
+<p>D: TypeError</p>
+
+<p>colorChange方法是静态的。 静态方法仅在创建它们的构造函数中存在，并且不能传递给任何子级。 由于freddie是一个子级对象，函数不会传递，所以在freddie实例上不存在freddie方法：抛出TypeError。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const member = new Person(&#34;Lydia&#34;, &#34;Hallie&#34;);
+Person.getFullName = () =&gt; this.firstName + this.lastName;
+
+console.log(member.getFullName());</pre></td></tr></table>
+</div>
+</div>
+<p>A: TypeError</p>
+
+<p>B: SyntaxError</p>
+
+<p>C: Lydia Hallie</p>
+
+<p>D: undefined undefined</p>
+
+<p>您不能像使用常规对象那样向构造函数添加属性。 如果要一次向所有对象添加功能，则必须使用原型。 所以在这种情况下应该这样写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Person.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+}</pre></td></tr></table>
+</div>
+</div>
+<p>这样会使member.getFullName()是可用的，为什么样做是对的？ 假设我们将此方法添加到构造函数本身。 也许不是每个Person实例都需要这种方法。这会浪费大量内存空间，因为它们仍然具有该属性，这占用了每个实例的内存空间。 相反，如果我们只将它添加到原型中，我们只需将它放在内存中的一个位置，但它们都可以访问它！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  
+  const lydia = new Person(&#34;Lydia&#34;, &#34;Hallie&#34;);
+  const sarah = Person(&#34;Sarah&#34;, &#34;Smith&#34;);
+  
+  console.log(lydia);
+  console.log(sarah);
+  </pre></td></tr></table>
+</div>
+</div>
+<p>A: Person {firstName: &ldquo;Lydia&rdquo;, lastName: &ldquo;Hallie&rdquo;} and undefined</p>
+
+<p>B: Person {firstName: &ldquo;Lydia&rdquo;, lastName: &ldquo;Hallie&rdquo;} and Person {firstName: &ldquo;Sarah&rdquo;, lastName: &ldquo;Smith&rdquo;}</p>
+
+<p>C: Person {firstName: &ldquo;Lydia&rdquo;, lastName: &ldquo;Hallie&rdquo;} and {}</p>
+
+<p>D:Person {firstName: &ldquo;Lydia&rdquo;, lastName: &ldquo;Hallie&rdquo;} and ReferenceError</p>
+
+<p>对于sarah，我们没有使用new关键字。 使用new时，它指的是我们创建的新空对象。 但是，如果你不添加new它指的是全局对象！
+我们指定了this.firstName等于&rsquo;Sarah和this.lastName等于Smith。 我们实际做的是定义global.firstName =&lsquo;Sarah&rsquo;和global.lastName =&lsquo;Smith。 sarah本身的返回值是undefined。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function getPersonInfo(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
+}
+
+const person = &#34;Lydia&#34;;
+const age = 21;
+
+getPersonInfo`${person} is ${age} years old`;</pre></td></tr></table>
+</div>
+</div>
+<p>A: Lydia 21 [&ldquo;&rdquo;, &ldquo;is&rdquo;, &ldquo;years old&rdquo;]</p>
+
+<p>B: [&ldquo;&rdquo;, &ldquo;is&rdquo;, &ldquo;years old&rdquo;] Lydia 21</p>
+
+<p>C: Lydia [&ldquo;&rdquo;, &ldquo;is&rdquo;, &ldquo;years old&rdquo;] 21</p>
+
+<p>如果使用标记的模板字符串，则第一个参数的值始终是字符串值的数组。 其余参数获取传递到模板字符串中的表达式的值！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function checkAge(data) {
+  if (data === { age: 18 }) {
+    console.log(&#34;You are an adult!&#34;);
+  } else if (data == { age: 18 }) {
+    console.log(&#34;You are still an adult.&#34;);
+  } else {
+    console.log(`Hmm.. You don&#39;t have an age I guess`);
+  }
+}
+
+checkAge({ age: 18 });</pre></td></tr></table>
+</div>
+</div>
+<p>A: You are an adult!</p>
+
+<p>B: You are still an adult.</p>
+
+<p>C: Hmm.. You don&rsquo;t have an age I guess</p>
+
+<p>在比较相等性，原始类型通过它们的值进行比较，而对象通过它们的引用进行比较。JavaScript检查对象是否具有对内存中相同位置的引用。</p>
+
+<p>我们作为参数传递的对象和我们用于检查相等性的对象在内存中位于不同位置，所以它们的引用是不同的。</p>
+
+<p>这就是为什么{ age: 18 } === { age: 18 }和 { age: 18 } == { age: 18 } 返回 false的原因。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function getAge(...args) {
+  console.log(typeof args);
+}
+
+getAge(21);</pre></td></tr></table>
+</div>
+</div>
+<p>A: &ldquo;number&rdquo;</p>
+
+<p>B: &ldquo;array&rdquo;</p>
+
+<p>C: &ldquo;object&rdquo;</p>
+
+<p>D: &ldquo;NaN&rdquo;</p>
+
+<p>扩展运算符（&hellip; args）返回一个带参数的数组。 数组是一个对象，因此typeof args返回object。</p>
+
+<p><code>const sum = eval(&quot;10*10+5&quot;);  //105</code></p>
+
+<p>eval会为字符串传递的代码求值。 如果它是一个表达式，就像在这种情况下一样，它会计算表达式。 表达式为10 * 10 + 5计算得到105。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const obj = { 1: &#34;a&#34;, 2: &#34;b&#34;, 3: &#34;c&#34; };
+const set = new Set([1, 2, 3, 4, 5]);
+
+obj.hasOwnProperty(&#34;1&#34;);
+obj.hasOwnProperty(1);
+set.has(&#34;1&#34;);
+set.has(1);</pre></td></tr></table>
+</div>
+</div>
+<p>A: false true false true</p>
+
+<p>B: false true true true</p>
+
+<p>C: true true false true</p>
+
+<p>D: true true true true</p>
+
+<p>所有对象键（不包括Symbols）都会被存储为字符串，即使你没有给定字符串类型的键。 这就是为什么obj.hasOwnProperty（&rsquo;1&rsquo;）也返回true。</p>
+
+<p>上面的说法不适用于Set。 在我们的Set中没有“1”：set.has（&rsquo;1&rsquo;）返回false。 它有数字类型1，set.has（1）返回true。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for (let i = 1; i &lt; 5; i++) {
+  if (i === 3) continue;
+  console.log(i); //1 2 4
+}</pre></td></tr></table>
+</div>
+</div>
+<p>如果某个条件返回true，则continue语句跳过迭代。</p>
+
+<p><strong>在双层FOR循环中，在内循环使用Continue,只会在内循环中跳过此处循环，小循环继续执行，不会跳过大循环</strong></p>
+
+<p><strong>在双层FOR循环中，在内循环使用Break,只会在内循环中结束本次循环，小循环结束此次执行，不会跳过大循环</strong></p>
+
+<p><strong>在双层FOR循环中，在内循环使用Return，结束本次循环，同时结束本次方法 。</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const a = {};
+const b = { key: &#34;b&#34; };
+const c = { key: &#34;c&#34; };
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);</pre></td></tr></table>
+</div>
+</div>
+<p>A: 123</p>
+
+<p>B: 456</p>
+
+<p>C: undefined</p>
+
+<p>D: ReferenceError</p>
+
+<p>对象键自动转换为字符串。我们试图将一个对象设置为对象a的键，其值为123。</p>
+
+<p>但是，当对象自动转换为字符串化时，它变成了[Object object]。 所以我们在这里说的是a[&ldquo;Object object&rdquo;] = 123。 然后，我们可以尝试再次做同样的事情。 c对象同样会发生隐式类型转换。那么，a[&ldquo;Object object&rdquo;] = 456。</p>
+
+<p>然后，我们打印a[b]，它实际上是a[&ldquo;Object object&rdquo;]。 我们将其设置为456，因此返回456。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;div onclick=&#34;console.log(&#39;first div&#39;)&#34;&gt;
+  &lt;div onclick=&#34;console.log(&#39;second div&#39;)&#34;&gt;
+    &lt;button onclick=&#34;console.log(&#39;button&#39;)&#34;&gt;
+      Click!
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>单击按钮时event.target是什么? C</p>
+
+<p>A: div外部</p>
+
+<p>B: div内部</p>
+
+<p>C: button</p>
+
+<p>D: 所有嵌套元素的数组.</p>
+
+<p>导致事件的最深嵌套元素是事件的目标。 你可以通过event.stopPropagation停止冒泡</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;div id=&#34;a&#34;&gt;
+    &lt;div id=&#34;b&#34;&gt;
+      &lt;div id=&#34;c&#34;&gt;
+        &lt;div id=&#34;d&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+document.getElementById(&#39;a&#39;).addEventListener(&#39;click&#39;, function(e) {
+      console.log(&#39;target:&#39; + e.target.id + &#39;&amp;currentTarget:&#39; + e.currentTarget.id);
+    });    
+    document.getElementById(&#39;b&#39;).addEventListener(&#39;click&#39;, function(e) {
+      console.log(&#39;target:&#39; + e.target.id + &#39;&amp;currentTarget:&#39; + e.currentTarget.id);
+    });    
+    document.getElementById(&#39;c&#39;).addEventListener(&#39;click&#39;, function(e) {
+      console.log(&#39;target:&#39; + e.target.id + &#39;&amp;currentTarget:&#39; + e.currentTarget.id);
+    });    
+    document.getElementById(&#39;d&#39;).addEventListener(&#39;click&#39;, function(e) {
+      console.log(&#39;target:&#39; + e.target.id + &#39;&amp;currentTarget:&#39; + e.currentTarget.id);
+    });
+
+点击d，事件冒泡：
+
+target:d&amp;currentTarget:d
+target:d&amp;currentTarget:c
+target:d&amp;currentTarget:b
+target:d&amp;currentTarget:a</pre></td></tr></table>
+</div>
+</div>
+<p>event.target指向引起触发事件的元素，而event.currentTarget则是事件绑定的元素，只有被点击的那个目标元素的event.target才会等于event.currentTarget。</p>
+
+<p>下面这些值哪些是假值?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">0;
+new Number(0);
+(&#34;&#34;);
+(&#34; &#34;);
+new Boolean(false);
+undefined;</pre></td></tr></table>
+</div>
+</div>
+<p>A: 0, &ldquo;, undefined</p>
+
+<p>B: 0, new Number(0), &ldquo;, new Boolean(false), undefined</p>
+
+<p>C: 0, &ldquo;, new Boolean(false), undefined</p>
+
+<p>D: 所有都是假值</p>
+
+<p>JavaScript中只有6个假值：</p>
+
+<blockquote>
+<p>undefined</p>
+
+<p>null</p>
+
+<p>NaN</p>
+
+<p>0</p>
+
+<p>&rdquo; (empty string)</p>
+
+<p>false</p>
+
+<p>函数构造函数，如new Number和new Boolean都是真值。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">(() =&gt; {
+  let x, y;
+  try {
+    throw new Error();
+  } catch (x) {
+    (x = 1), (y = 2);
+    console.log(x);
+  }
+  console.log(x); //undefined
+  console.log(y);
+})();</pre></td></tr></table>
+</div>
+</div>
+<p>A: 1 undefined 2</p>
+
+<p>B: undefined undefined undefined</p>
+
+<p>C: 1 1 2</p>
+
+<p>D: 1 undefined undefined</p>
+
+<p>catch块接收参数x。当我们传递参数时，这与变量的x不同。这个变量x是属于catch作用域的。</p>
+
+<p>之后，我们将这个块级作用域的变量设置为1，并设置变量y的值。 现在，我们打印块级作用域的变量x，它等于1。</p>
+
+<p>在catch块之外，x仍然是undefined，而y是2。 当我们想在catch块之外的console.log(x)时，它返回undefined，而y返回2。</p>
+
+<p><strong>JavaScript只有原始类型和对象。</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[[0, 1], [2, 3]].reduce(
+  (acc, cur) =&gt; {
+    return acc.concat(cur);
+  },
+  [1, 2]
+)</pre></td></tr></table>
+</div>
+</div>
+<p>A: [0, 1, 2, 3, 1, 2]</p>
+
+<p>B: [6, 1, 2]</p>
+
+<p>C: [1, 2, 0, 1, 2, 3]</p>
+
+<p>D: [1, 2, 6]</p>
+
+<p>[1,2]是我们的初始值。 这是我们开始执行reduce函数的初始值，以及第一个acc的值。 在第一轮中，acc是[1,2]，cur是[0,1]。 我们将它们连接起来，结果是[1,2,0,1]。</p>
+
+<p>然后，acc的值为[1,2,0,1]，cur的值为[2,3]。 我们将它们连接起来，得到[1,2,0,1,2,3]。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-10-17
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
+          <a href="/tags/javascript%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/">JavaScript经典题目</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E6%A0%87%E7%AD%BE%E6%A8%A1%E6%9D%BF/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">标签模板</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/canvas/">
+            <span class="next-text nav-default">canvas使用</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/javascript%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/" class="leancloud_visitors" data-flag-title="JavaScript经典题目">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

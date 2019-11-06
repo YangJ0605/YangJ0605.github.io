@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>掘金 on mo白的博客</title>
+    <link>https://yangj0605.github.io/categories/%E6%8E%98%E9%87%91/</link>
+    <description>Recent content in 掘金 on mo白的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 17 Oct 2019 21:15:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://yangj0605.github.io/categories/%E6%8E%98%E9%87%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript经典题目</title>
+      <link>https://yangj0605.github.io/post/javascript%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/</link>
+      <pubDate>Thu, 17 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/javascript%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/</guid>
+      <description>记录一些做错的题 1 2 3 4 5 6 7 8 9 10 const shape = { radius: 10, diameter() { return this.radius * 2; }, perimeter: () =&amp;gt; 2 * Math.PI * this.radius }; shape.diameter(); shape.perimeter(); A: 20 and 62.83185307179586 B: 20 and NaN C: 20 and 63 D: NaN and 63 请注意，diameter</description>
+    </item>
+    
+  </channel>
+</rss>

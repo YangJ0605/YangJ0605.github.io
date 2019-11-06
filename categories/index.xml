@@ -6,10 +6,37 @@
     <description>Recent content in Categories on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Oct 2019 22:15:18 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 19 Oct 2019 21:15:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS</title>
+      <link>https://yangj0605.github.io/categories/js/</link>
+      <pubDate>Sat, 19 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/categories/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>新知识</title>
+      <link>https://yangj0605.github.io/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Sat, 19 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>掘金</title>
+      <link>https://yangj0605.github.io/categories/%E6%8E%98%E9%87%91/</link>
+      <pubDate>Thu, 17 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/categories/%E6%8E%98%E9%87%91/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>htm5</title>
@@ -44,15 +71,6 @@
       <pubDate>Mon, 30 Sep 2019 20:15:18 +0800</pubDate>
       
       <guid>https://yangj0605.github.io/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JS</title>
-      <link>https://yangj0605.github.io/categories/js/</link>
-      <pubDate>Tue, 10 Sep 2019 20:15:18 +0800</pubDate>
-      
-      <guid>https://yangj0605.github.io/categories/js/</guid>
       <description></description>
     </item>
     

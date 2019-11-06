@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>新知识 on mo白的博客</title>
+    <link>https://yangj0605.github.io/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/</link>
+    <description>Recent content in 新知识 on mo白的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 19 Oct 2019 21:15:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://yangj0605.github.io/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数组的一些方法</title>
+      <link>https://yangj0605.github.io/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/</link>
+      <pubDate>Sat, 19 Oct 2019 21:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/</guid>
+      <description>forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&amp;lt;array.length;i++){ x(array[i],i) } } //调用</description>
+    </item>
+    
+    <item>
+      <title>es6之set</title>
+      <link>https://yangj0605.github.io/post/es6%E4%B9%8Bset/</link>
+      <pubDate>Fri, 18 Oct 2019 22:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/es6%E4%B9%8Bset/</guid>
+      <description>set是ES6中新增的类型，和数组类似，唯一不同在于该类型不会有重复的数据，一般常用来对数据进行去重操作。 一、声明 let set = new Set();即创建</description>
+    </item>
+    
+    <item>
+      <title>标签模板</title>
+      <link>https://yangj0605.github.io/post/%E6%A0%87%E7%AD%BE%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Thu, 17 Oct 2019 23:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/%E6%A0%87%E7%AD%BE%E6%A8%A1%E6%9D%BF/</guid>
+      <description>标签模板其实不是模板，而是函数调用的一种特殊形式。“标签”指的是函数，紧跟在后面的模板字符串就是它的参数。 1 2 3 4 5 6 7 8 var a =5 var b=10 xx `Hello ${a+b} world</description>
+    </item>
+    
+  </channel>
+</rss>
