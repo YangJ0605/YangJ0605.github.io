@@ -6,10 +6,19 @@
     <description>Recent content in Categories on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 12 Oct 2019 21:15:18 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 22:15:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>htm5</title>
+      <link>https://yangj0605.github.io/categories/htm5/</link>
+      <pubDate>Tue, 15 Oct 2019 22:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/categories/htm5/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>JS深入</title>

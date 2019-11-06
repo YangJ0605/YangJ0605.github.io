@@ -6,10 +6,28 @@
     <description>Recent content in Tags on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 12 Oct 2019 21:15:18 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 22:15:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>canvas</title>
+      <link>https://yangj0605.github.io/tags/canvas/</link>
+      <pubDate>Tue, 15 Oct 2019 22:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/canvas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>面试</title>
+      <link>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Tue, 15 Oct 2019 22:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>按值传递</title>
@@ -26,15 +44,6 @@
       <pubDate>Sat, 12 Oct 2019 21:15:18 +0800</pubDate>
       
       <guid>https://yangj0605.github.io/tags/%E9%97%AD%E5%8C%85/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>面试</title>
-      <link>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
-      <pubDate>Sat, 12 Oct 2019 21:15:18 +0800</pubDate>
-      
-      <guid>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</guid>
       <description></description>
     </item>
     

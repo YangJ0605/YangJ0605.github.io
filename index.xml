@@ -6,7 +6,7 @@
     <description>Recent content on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 12 Oct 2019 21:15:18 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 22:15:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,15 @@
       
       <guid>https://yangj0605.github.io/about/</guid>
       <description>一款hugo搭建的个人使用博客~~~</description>
+    </item>
+    
+    <item>
+      <title>canvas使用</title>
+      <link>https://yangj0605.github.io/post/canvas/</link>
+      <pubDate>Tue, 15 Oct 2019 22:15:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/canvas/</guid>
+      <description>canvas 标签 &amp;lt;canvas width=&amp;quot;600&amp;quot; height=&amp;quot;400&amp;quot; id=&amp;quot;canvas&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt; 不给宽高的话默认是300+150 怎么用 1 2 3 4 //拿到canvas var canvas = document.getElementById(&amp;#34;canvas&amp;#34;); //创建画图工具 var context = canvas.getContext(&amp;#34;2d&amp;#34;); 相关的api及用法 1 2 3 4 5</description>
     </item>
     
     <item>
