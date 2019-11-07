@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>数组的一些方法 - mo白的博客</title>
+  <title>ES6之class与继承 - mo白的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="mo白" /><meta name="description" content="forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&amp;lt;array.length;i&#43;&#43;){ x(array[i],i) } } //调用" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="mo白" /><meta name="description" content="首先来看看JS中继承的两种写法 ES5 写法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 function Human(name){ this.name = name } Human.prototype.run = function(){ console.log(&amp;#34;我叫&amp;#" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.58.3 with theme even" />
 
 
-<link rel="canonical" href="https://yangj0605.github.io/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/" />
+<link rel="canonical" href="https://yangj0605.github.io/post/es6%E4%B9%8Bclass%E4%B8%8E%E7%BB%A7%E6%89%BF/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,26 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="数组的一些方法" />
-<meta property="og:description" content="forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&lt;array.length;i&#43;&#43;){ x(array[i],i) } } //调用" />
+<meta property="og:title" content="ES6之class与继承" />
+<meta property="og:description" content="首先来看看JS中继承的两种写法 ES5 写法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 function Human(name){ this.name = name } Human.prototype.run = function(){ console.log(&#34;我叫&#" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://yangj0605.github.io/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/" />
-<meta property="article:published_time" content="2019-10-19T21:15:18+08:00" />
-<meta property="article:modified_time" content="2019-10-19T21:15:18+08:00" />
-<meta itemprop="name" content="数组的一些方法">
-<meta itemprop="description" content="forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&lt;array.length;i&#43;&#43;){ x(array[i],i) } } //调用">
+<meta property="og:url" content="https://yangj0605.github.io/post/es6%E4%B9%8Bclass%E4%B8%8E%E7%BB%A7%E6%89%BF/" />
+<meta property="article:published_time" content="2019-10-20T22:11:18+08:00" />
+<meta property="article:modified_time" content="2019-10-20T22:11:18+08:00" />
+<meta itemprop="name" content="ES6之class与继承">
+<meta itemprop="description" content="首先来看看JS中继承的两种写法 ES5 写法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 function Human(name){ this.name = name } Human.prototype.run = function(){ console.log(&#34;我叫&#">
 
 
-<meta itemprop="datePublished" content="2019-10-19T21:15:18&#43;08:00" />
-<meta itemprop="dateModified" content="2019-10-19T21:15:18&#43;08:00" />
-<meta itemprop="wordCount" content="567">
+<meta itemprop="datePublished" content="2019-10-20T22:11:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-20T22:11:18&#43;08:00" />
+<meta itemprop="wordCount" content="656">
 
 
 
-<meta itemprop="keywords" content="面试,数组," />
+<meta itemprop="keywords" content="面试,class," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="数组的一些方法"/>
-<meta name="twitter:description" content="forEach() 方法对数组的每个元素执行一次提供的函数。 1 2 3 4 5 var array1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; array1.forEach(function(element) { console.log(element); }); 原理: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 function forEach(array,x){ for(let i=0;i&lt;array.length;i&#43;&#43;){ x(array[i],i) } } //调用"/>
+<meta name="twitter:title" content="ES6之class与继承"/>
+<meta name="twitter:description" content="首先来看看JS中继承的两种写法 ES5 写法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 function Human(name){ this.name = name } Human.prototype.run = function(){ console.log(&#34;我叫&#"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -124,15 +124,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">数组的一些方法</h1>
+      <h1 class="post-title">ES6之class与继承</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-10-19 </span>
+        <span class="post-time"> 2019-10-20 </span>
         <div class="post-category">
             <a href="/categories/js/"> JS </a>
             <a href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/"> 新知识 </a>
             </div>
-          <span class="more-meta"> 约 567 字 </span>
+          <span class="more-meta"> 约 656 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -142,141 +142,10 @@
     <div class="post-content">
       
 
-<h1 id="foreach-方法对数组的每个元素执行一次提供的函数">forEach() 方法对数组的每个元素执行一次提供的函数。</h1>
+<p><strong>首先来看看JS中继承的两种写法</strong></p>
+
+<h2 id="es5-写法">ES5 写法</h2>
 <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">var array1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
-
-array1.forEach(function(element) {
-  console.log(element);
-});</pre></td></tr></table>
-</div>
-</div>
-<p>原理:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">function forEach(array,x){
-    for(let i=0;i&lt;array.length;i++){
-        x(array[i],i)
-    }
-}
-//调用
-forEach([1,2,3],(i)=&gt;{console.log(i)})
-打印出：1 2 3
----------
-var obj = {0:&#39;a&#39;,1:&#39;b&#39;,length:2}
-
-obj.forEach=function(x){
-    for(let i=0;i&lt;this.length;i++){
-        x(this[i],i)
-    }
-}
-obj.forEach((val,key)=&gt;{console.log(val,key)})
-
-打印出：a 0
-        b 1</pre></td></tr></table>
-</div>
-</div>
-<h1 id="map-方法创建一个新数组-其结果是该数组中的每个元素都调用一个提供的函数后返回的结果">map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</h1>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">var array1 = [1, 4, 9, 16];
-
-
-const map1 = array1.map(x =&gt; x * 2);
-
-console.log(map1);
-
-//[2, 8, 18, 32]</pre></td></tr></table>
-</div>
-</div>
-<h1 id="filter-方法创建一个新数组-其包含通过所提供函数实现的测试的所有元素">filter() 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</h1>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">var words = [&#39;spray&#39;, &#39;limit&#39;, &#39;elite&#39;, &#39;exuberant&#39;, &#39;destruction&#39;, &#39;present&#39;];
-
-const result = words.filter(word =&gt; word.length &gt; 6);
-
-console.log(result);
-
-//打印出[&#34;exuberant&#34;, &#34;destruction&#34;, &#34;present&#34;]</pre></td></tr></table>
-</div>
-</div>
-<h1 id="array的reduce-把一个函数作用在这个array的-x1-x2-x3-上-这个函数必须接收两个参数-reduce-把结果继续和序列的下一个元素做累积计算">Array的reduce()把一个函数作用在这个Array的[x1, x2, x3&hellip;]上，这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算。</h1>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">const array1 = [1, 2, 3, 4];
-const reducer = (accumulator, currentValue) =&gt; accumulator + currentValue;
-
-//假如reduce中只有一个函数，那么函数中的第一个值就是数组的第一项，第二个值就是第二项；如果reduce中有一个初始值，那么函数中的第一个值为初始值，第二个值为数组的第一项。然后，第二项变成第一项，以此类推。
-
-console.log(array1.reduce(reducer));
- // 1 + 2 + 3 + 4 =10
-
-console.log(array1.reduce(reducer, 5)); //初始结果为5
-// 5+1+2+3+4=15</pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -300,34 +169,112 @@ console.log(array1.reduce(reducer, 5)); //初始结果为5
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
-</span><span class="lnt">23
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">map用reduce表示
+<pre class="chroma">function Human(name){
+     this.name = name
+ }
+ Human.prototype.run = function(){
+     console.log(&#34;我叫&#34;+this.name+&#34;，我在跑&#34;)
+     return undefined
+ }
+ function Man(name){
+     Human.call(this, name) //借用构造函数实现继承，只能继承父类子自身的属性，无法继承原型中的属性和方法
+     this.gender = &#39;男&#39;
+ }
 
-a=[1,2,3]
-var b = a.reduce((pre,next)=&gt;{
-    console.log(pre) //[],[2],[2,4]
-    pre.push(next*2) 
-    return pre
-},[])
+ var f = function(){}  // 构造一个空的构造函数
+ f.prototype = Human.prototype  //使这个空的构造函数的原型指向父类的原型
+ Man.prototype = new f()        // 使子类的原型指向这个空的构造函数的实例
 
-console.log(b) // [2,4,6]
+//上面三句话相当于
+// Man.prototype.__proto__=Human.prototype
 
-filter 用reduce表示
-
-a=[1,2,3,4,5,6,7,8,9,10]
-
-var b= a.reduce((pre,next)=&gt;{
-    if(next%2===0){
-        pre.push(next)
-    }
-    return pre
-},[])
-
-console.log(b) //[2,4,6,8,10]</pre></td></tr></table>
+ Man.prototype.fight = function(){
+     console.log(&#39;糊你熊脸&#39;)
+ }</pre></td></tr></table>
 </div>
 </div>
+<h2 id="es6-写法">ES6 写法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"> class Human{
+     constructor(name){
+         this.name = name  //写在constructor里的是实例对象的属性
+     }
+     run(){  //写在外面与constructor平级的是共有的属性。这种方法不能直接在原型上添加某个方法；只能写一个函数，然后返回
+            // 相当于Human.prototype.run
+         console.log(&#34;我叫&#34;+this.name+&#34;，我在跑&#34;)  
+         return undefined
+     }
+     get(){
+         return &#39;你想要的属性&#39;
+     }
+ }
+ class Man extends Human{  // Man.prototype.__proto__=Human.prototype
+     constructor(name){
+         super(name)  //Human.call(this, name)
+         this.gender = &#39;男&#39;
+     }
+     fight(){
+         console.log(&#39;糊你熊脸&#39;)
+     }
+ }</pre></td></tr></table>
+</div>
+</div>
+<p><strong>ES6规定Class类没有静态属性,只有静态方法：static</strong></p>
+
+<blockquote>
+<p>所谓静态，不需要实例化对象，直接调用</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">class Foo {
+      static classMethod() {
+            return &#39;lity&#39;;
+       }
+ }
+ var f= new Foo()
+ console.log(Foo.classMethod()) // &#39;hello&#39;
+ console.log(f.classMethod())  //报错</pre></td></tr></table>
+</div>
+</div>
+<p><strong>函数前面添加一个static关键字，表明这是一个静态方法，不会被实例继承，只能通过类来调用</strong></p>
+
     </div>
 
     <div class="post-copyright">
@@ -338,7 +285,7 @@ console.log(b) //[2,4,6,8,10]</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-10-19
+        2019-10-20
         
     </span>
   </p>
@@ -348,16 +295,16 @@ console.log(b) //[2,4,6,8,10]</pre></td></tr></table>
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
-          <a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
+          <a href="/tags/class/">class</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/es6%E4%B9%8Bclass%E4%B8%8E%E7%BB%A7%E6%89%BF/">
+        <a class="prev" href="/post/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">ES6之class与继承</span>
+            <span class="prev-text nav-default">js的设计模式</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/es6%E4%B9%8Bset/">
-            <span class="next-text nav-default">es6之set</span>
+        <a class="next" href="/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/">
+            <span class="next-text nav-default">数组的一些方法</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -367,7 +314,7 @@ console.log(b) //[2,4,6,8,10]</pre></td></tr></table>
         </div>
         
 
-  <span id="/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/" class="leancloud_visitors" data-flag-title="数组的一些方法">
+  <span id="/post/es6%E4%B9%8Bclass%E4%B8%8E%E7%BB%A7%E6%89%BF/" class="leancloud_visitors" data-flag-title="ES6之class与继承">
 		<span class="post-meta-item-text">文章阅读量 </span>
 		<span class="leancloud-visitors-count">0</span>
 		<p></p>

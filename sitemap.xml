@@ -10,35 +10,77 @@
   
   <url>
     <loc>https://yangj0605.github.io/categories/</loc>
-    <lastmod>2019-10-19T21:15:18+08:00</lastmod>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/categories/js/</loc>
-    <lastmod>2019-10-19T21:15:18+08:00</lastmod>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/tags/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/post/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/</loc>
-    <lastmod>2019-10-19T21:15:18+08:00</lastmod>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/post/</loc>
-    <lastmod>2019-10-19T21:15:18+08:00</lastmod>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/tags/</loc>
-    <lastmod>2019-10-19T21:15:18+08:00</lastmod>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/tags/class/</loc>
+    <lastmod>2019-10-20T22:11:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/post/es6%E4%B9%8Bclass%E4%B8%8E%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2019-10-20T22:11:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -52,20 +94,6 @@
   
   <url>
     <loc>https://yangj0605.github.io/post/%E6%95%B0%E7%BB%84%E7%9A%84foreachmapreduce/</loc>
-    <lastmod>2019-10-19T21:15:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yangj0605.github.io/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2019-10-19T21:15:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
     <lastmod>2019-10-19T21:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -240,14 +268,14 @@
   </url>
   
   <url>
-    <loc>https://yangj0605.github.io/tags/promise/</loc>
+    <loc>https://yangj0605.github.io/categories/promise/</loc>
     <lastmod>2019-10-04T21:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yangj0605.github.io/categories/promise/</loc>
+    <loc>https://yangj0605.github.io/tags/promise/</loc>
     <lastmod>2019-10-04T21:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
