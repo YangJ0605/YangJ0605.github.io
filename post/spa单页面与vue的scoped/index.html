@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>js的设计模式 - mo白的博客</title>
+  <title>SPA与vue的scoped原理 - mo白的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="mo白" /><meta name="description" content="一开始都没听说过这个名词，后面看了几篇文章才算理解，写一篇记录以防忘记 一、观察者模式（Observer） 观察者模式指的是一个对象（Subje" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="mo白" /><meta name="description" content="SPA单页面 SPA仅在Web页面初始化时加载对应的html，js和css。一旦页面加载完毕，SPA不会因为用户的操作而进行重新加载或者跳转。" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.58.3 with theme even" />
 
 
-<link rel="canonical" href="https://yangj0605.github.io/post/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" />
+<link rel="canonical" href="https://yangj0605.github.io/post/spa%E5%8D%95%E9%A1%B5%E9%9D%A2%E4%B8%8Evue%E7%9A%84scoped/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,26 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="js的设计模式" />
-<meta property="og:description" content="一开始都没听说过这个名词，后面看了几篇文章才算理解，写一篇记录以防忘记 一、观察者模式（Observer） 观察者模式指的是一个对象（Subje" />
+<meta property="og:title" content="SPA与vue的scoped原理" />
+<meta property="og:description" content="SPA单页面 SPA仅在Web页面初始化时加载对应的html，js和css。一旦页面加载完毕，SPA不会因为用户的操作而进行重新加载或者跳转。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://yangj0605.github.io/post/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" />
-<meta property="article:published_time" content="2019-10-21T21:21:18+08:00" />
-<meta property="article:modified_time" content="2019-10-21T21:21:18+08:00" />
-<meta itemprop="name" content="js的设计模式">
-<meta itemprop="description" content="一开始都没听说过这个名词，后面看了几篇文章才算理解，写一篇记录以防忘记 一、观察者模式（Observer） 观察者模式指的是一个对象（Subje">
+<meta property="og:url" content="https://yangj0605.github.io/post/spa%E5%8D%95%E9%A1%B5%E9%9D%A2%E4%B8%8Evue%E7%9A%84scoped/" />
+<meta property="article:published_time" content="2019-11-01T21:21:18+08:00" />
+<meta property="article:modified_time" content="2019-11-01T21:21:18+08:00" />
+<meta itemprop="name" content="SPA与vue的scoped原理">
+<meta itemprop="description" content="SPA单页面 SPA仅在Web页面初始化时加载对应的html，js和css。一旦页面加载完毕，SPA不会因为用户的操作而进行重新加载或者跳转。">
 
 
-<meta itemprop="datePublished" content="2019-10-21T21:21:18&#43;08:00" />
-<meta itemprop="dateModified" content="2019-10-21T21:21:18&#43;08:00" />
-<meta itemprop="wordCount" content="479">
+<meta itemprop="datePublished" content="2019-11-01T21:21:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-01T21:21:18&#43;08:00" />
+<meta itemprop="wordCount" content="604">
 
 
 
-<meta itemprop="keywords" content="面试,js的设计模式," />
+<meta itemprop="keywords" content="面试,vue," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="js的设计模式"/>
-<meta name="twitter:description" content="一开始都没听说过这个名词，后面看了几篇文章才算理解，写一篇记录以防忘记 一、观察者模式（Observer） 观察者模式指的是一个对象（Subje"/>
+<meta name="twitter:title" content="SPA与vue的scoped原理"/>
+<meta name="twitter:description" content="SPA单页面 SPA仅在Web页面初始化时加载对应的html，js和css。一旦页面加载完毕，SPA不会因为用户的操作而进行重新加载或者跳转。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -124,16 +124,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">js的设计模式</h1>
+      <h1 class="post-title">SPA与vue的scoped原理</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-10-21 </span>
+        <span class="post-time"> 2019-11-01 </span>
         <div class="post-category">
-            <a href="/categories/js/"> JS </a>
+            <a href="/categories/vue/"> vue </a>
             <a href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/"> 新知识 </a>
             </div>
-          <span class="more-meta"> 约 479 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 604 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -142,90 +142,58 @@
     <div class="post-content">
       
 
-<p><strong>一开始都没听说过这个名词，后面看了几篇文章才算理解，写一篇记录以防忘记</strong></p>
+<h2 id="spa单页面">SPA单页面</h2>
 
-<h1 id="一-观察者模式-observer">一、观察者模式（Observer）</h1>
+<p>SPA仅在Web页面初始化时加载对应的html，js和css。一旦页面加载完毕，SPA不会因为用户的操作而进行重新加载或者跳转。因为用的路由机制实现html的内容变换，避免了页面的重新加载。</p>
 
-<p>观察者模式指的是一个对象（Subject）维持一系列依赖于它的对象（Observer），当有关状态发生变更时 Subject 对象则通知一系列 Observer 对象进行更新。</p>
+<h4 id="优点">优点：</h4>
 
-<p>在观察者模式中，Subject 对象拥有添加、删除和通知一系列 Observer 的方法等等，而 Observer 对象拥有更新方法等等。</p>
+<p>用户体验较好，内容的改变不用重新加载，避免了不必要的跳转和渲染，所以SPA对服务器的压力较小。前后端分离，架构清晰，前端负责交互逻辑，后端负责数据响应。</p>
+
+<h4 id="缺点">缺点：</h4>
+
+<p>初次加载耗时多，SEO难度较大。</p>
+
+<h2 id="vue的scoped原理">vue的scoped原理</h2>
+
+<h4 id="首先谈谈它的作用">首先谈谈它的作用</h4>
+
+<p>它实现了组件样式的私有化，不会对全局样式造成污染。</p>
+
+<h4 id="原理">原理</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">class Subject {
-  constructor() {
-    this.Observers = [];
-  }
-  add(observer) { //添加
-    this.Observers.push(observer)
-  }
-  remove(observer) {//移除
-    this.Observers.filter(item =&gt; item === observer);
-  }
-  notify() {
-    this.Observers.forEach(item =&gt; {
-      item.update();
-    })
-  }
-}
-//定义观察着对象
-class Observer {
-  constructor(name) {
-    this.name = name;
-  }
-  update() {
-    console.log(`my name is:${this.name}`);
-  }
-}
- 
-//测试
-let sub = new Subject();
-let obs1 = new Observer(&#39;leaf111&#39;);
-let obs2 = new Observer(&#39;leaf222&#39;);
-sub.add(obs1);
-sub.add(obs2);
-sub.notify();</pre></td></tr></table>
+<pre class="chroma">在控制台看到使用scoped的元素，通过观察DOM结构可以发现：vue通过在DOM结构以及css样式上加上唯一的标记，保证唯一，达到样式私有化，不污染全局的作用，样式属性上也会多一个该字符，以保证唯一。
+&lt;div data-v-24421846 class=&#34;header&#34;&gt;
+&lt;/div&gt;
+
+样式如下：可以看出加上scoped后的组件里的标签都会多一个data-v-24421846的属性。
+
+.header[data-v-24421846]{
+  ///一些样式
+}</pre></td></tr></table>
 </div>
 </div>
-<p>上述代码中，我们创建了 Subject 对象和两个 Observer 对象，当有关状态发生变更时则通过 Subject 对象的 notify 方法通知这两个 Observer 对象，这两个 Observer 对象通过 update 方法进行更新。</p>
+<p>由此可知，添加scoped属性的组件，为了达到不污染全局，做了如下处理：</p>
 
-<h1 id="二-发布订阅模式-publisher-subscriber">二、发布订阅模式（Publisher &amp;&amp; Subscriber）</h1>
+<ul>
+<li><p>给HTML的DOM节点加一个不重复属性data-v-24421846标志唯一性</p></li>
 
-<p>发布订阅模式指的是希望接收通知的对象（Subscriber）基于一个主题通过自定义事件订阅主题，被激活事件的对象（Publisher）通过发布主题事件的方式通知各个订阅该主题的 Subscriber 对象。</p>
+<li><p>在添加scoped属性的组件的每个样式选择器后添加一个等同与“不重复属性”相同的字段，实现类似于“作用域”的作用，不影响全局</p></li>
+
+<li><p>如果组件内部还有组件，只会给最外层的组件里的标签加上唯一属性字段，不影响组件内部引用的组件（ 注意 ）</p></li>
+</ul>
 
     </div>
 
@@ -237,7 +205,7 @@ sub.notify();</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-10-21
+        2019-11-01
         
     </span>
   </p>
@@ -247,16 +215,12 @@ sub.notify();</pre></td></tr></table>
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
-          <a href="/tags/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">js的设计模式</a>
+          <a href="/tags/vue/">vue</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/spa%E5%8D%95%E9%A1%B5%E9%9D%A2%E4%B8%8Evue%E7%9A%84scoped/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">SPA与vue的scoped原理</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/es6%E4%B9%8Bclass%E4%B8%8E%E7%BB%A7%E6%89%BF/">
-            <span class="next-text nav-default">ES6之class与继承</span>
+        
+        <a class="next" href="/post/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+            <span class="next-text nav-default">js的设计模式</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -266,7 +230,7 @@ sub.notify();</pre></td></tr></table>
         </div>
         
 
-  <span id="/post/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="js的设计模式">
+  <span id="/post/spa%E5%8D%95%E9%A1%B5%E9%9D%A2%E4%B8%8Evue%E7%9A%84scoped/" class="leancloud_visitors" data-flag-title="SPA与vue的scoped原理">
 		<span class="post-meta-item-text">文章阅读量 </span>
 		<span class="leancloud-visitors-count">0</span>
 		<p></p>

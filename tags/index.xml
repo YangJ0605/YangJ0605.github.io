@@ -6,10 +6,28 @@
     <description>Recent content in Tags on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Oct 2019 21:21:18 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Nov 2019 21:21:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vue</title>
+      <link>https://yangj0605.github.io/tags/vue/</link>
+      <pubDate>Fri, 01 Nov 2019 21:21:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>面试</title>
+      <link>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Fri, 01 Nov 2019 21:21:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>js的设计模式</title>
@@ -17,15 +35,6 @@
       <pubDate>Mon, 21 Oct 2019 21:21:18 +0800</pubDate>
       
       <guid>https://yangj0605.github.io/tags/js%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>面试</title>
-      <link>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
-      <pubDate>Mon, 21 Oct 2019 21:21:18 +0800</pubDate>
-      
-      <guid>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</guid>
       <description></description>
     </item>
     
