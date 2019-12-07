@@ -10,41 +10,69 @@
   
   <url>
     <loc>https://yangj0605.github.io/categories/</loc>
-    <lastmod>2019-11-01T21:21:18+08:00</lastmod>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/post/event-loop/</loc>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/categories/js/</loc>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/tags/js/</loc>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/</loc>
-    <lastmod>2019-11-01T21:21:18+08:00</lastmod>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/post/</loc>
-    <lastmod>2019-11-01T21:21:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yangj0605.github.io/post/spa%E5%8D%95%E9%A1%B5%E9%9D%A2%E4%B8%8Evue%E7%9A%84scoped/</loc>
-    <lastmod>2019-11-01T21:21:18+08:00</lastmod>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yangj0605.github.io/tags/</loc>
-    <lastmod>2019-11-01T21:21:18+08:00</lastmod>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yangj0605.github.io/tags/vue/</loc>
+    <loc>https://yangj0605.github.io/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2019-11-20T22:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangj0605.github.io/post/spa%E5%8D%95%E9%A1%B5%E9%9D%A2%E4%B8%8Evue%E7%9A%84scoped/</loc>
     <lastmod>2019-11-01T21:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -58,22 +86,8 @@
   </url>
   
   <url>
-    <loc>https://yangj0605.github.io/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://yangj0605.github.io/tags/vue/</loc>
     <lastmod>2019-11-01T21:21:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yangj0605.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2019-11-01T21:21:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yangj0605.github.io/categories/js/</loc>
-    <lastmod>2019-10-21T21:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -332,13 +346,6 @@
   
   <url>
     <loc>https://yangj0605.github.io/post/es6%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2019-09-10T20:15:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yangj0605.github.io/tags/js/</loc>
     <lastmod>2019-09-10T20:15:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

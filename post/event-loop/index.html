@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Event Loop的理解 - mo白的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mo白" /><meta name="description" content="首先先了解以下几个概念： CPU 计算机的核心就是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。 进程 单个CPU一次只能运行一个任务。进" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
+
+
+<link rel="canonical" href="https://yangj0605.github.io/post/event-loop/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Event Loop的理解" />
+<meta property="og:description" content="首先先了解以下几个概念： CPU 计算机的核心就是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。 进程 单个CPU一次只能运行一个任务。进" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangj0605.github.io/post/event-loop/" />
+<meta property="article:published_time" content="2019-11-20T22:21:18+08:00" />
+<meta property="article:modified_time" content="2019-11-20T22:21:18+08:00" />
+<meta itemprop="name" content="Event Loop的理解">
+<meta itemprop="description" content="首先先了解以下几个概念： CPU 计算机的核心就是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。 进程 单个CPU一次只能运行一个任务。进">
+
+
+<meta itemprop="datePublished" content="2019-11-20T22:21:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-20T22:21:18&#43;08:00" />
+<meta itemprop="wordCount" content="2359">
+
+
+
+<meta itemprop="keywords" content="面试,js," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Event Loop的理解"/>
+<meta name="twitter:description" content="首先先了解以下几个概念： CPU 计算机的核心就是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。 进程 单个CPU一次只能运行一个任务。进"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">♥mo白</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">种类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">♥mo白</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">种类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Event Loop的理解</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-11-20 </span>
+        <div class="post-category">
+            <a href="/categories/js/"> js </a>
+            <a href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/"> 新知识 </a>
+            </div>
+          <span class="more-meta"> 约 2359 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<p>首先先了解以下几个概念：</p>
+
+<h3 id="cpu">CPU</h3>
+
+<p>计算机的核心就是CPU，它承担了所有的计算任务。<strong>它就像一座工厂，时刻在运行。</strong></p>
+
+<h3 id="进程">进程</h3>
+
+<p>单个CPU一次只能运行一个任务。进程就好比工厂的车间，它代表CPU所能处理的单个任务。进程之间相互独立，任一时刻，CPU总是运行一个进程，其他进程处于非运行状态。CPU使用时间片轮转进度算法来实现同时运行多个线程。</p>
+
+<h3 id="线程">线程</h3>
+
+<p>每个车间里面可以有很多的工人，共享车间所有的资源，他们协同完成一个任务。</p>
+
+<p>线程就好比是车间里面的工人，一个进程可以包含多个线程，多个线程共享进程资源。</p>
+
+<h2 id="cpu-进程-线程之间的关系">CPU、进程、线程之间的关系</h2>
+
+<ul>
+<li><p>进程是CPU资源分配的最小单位。</p></li>
+
+<li><p>线程是建立在进程的基础上的一次程序运行单位，一个进程可以有多个线程。</p></li>
+
+<li><p>不同进程之间可以通信，但是代价较大。</p></li>
+
+<li><p>单线程与多线程，都是指在一个进程内的单和多</p></li>
+</ul>
+
+<h2 id="浏览器就是多进程的">浏览器就是多进程的</h2>
+
+<p>打开任务管理器，查看chrome.exe存在多个进程,它的每一个tab页面就是一个独立的进程。</p>
+
+<h2 id="浏览器包含了哪些进程">浏览器包含了哪些进程？</h2>
+
+<ul>
+<li>主进程
+
+<ul>
+<li>协调控制其他子进程（创建，销毁）</li>
+<li>浏览器界面显示，用户交互，前进、后退、收藏</li>
+</ul></li>
+<li>第三方插件进程
+
+<ul>
+<li>每种类型的插件对应一个进程，仅当该插件使用时才创建进程</li>
+</ul></li>
+<li>GPU进程
+
+<ul>
+<li>用于3D绘制等</li>
+</ul></li>
+<li>渲染进程，也就是所说的浏览器内核
+
+<ul>
+<li>负责页面渲染，脚本执行，事件处理等</li>
+<li>每个tab页一个渲染进程</li>
+</ul></li>
+</ul>
+
+<p>对于前端开发来说，最重要的就是渲染进程，也就是常说的浏览器内核。</p>
+
+<h2 id="浏览器内核-渲染进程">浏览器内核（渲染进程）</h2>
+
+<h3 id="渲染进程包含哪些线程呢">渲染进程包含哪些线程呢？</h3>
+
+<ul>
+<li><p>GUI渲染线程</p>
+
+<ul>
+<li>负责渲染页面，布局和绘制</li>
+<li>页面需要重绘和回流是，该线程会执行</li>
+<li>与JS引擎线程互斥，防止渲染结果不可预期</li>
+</ul></li>
+
+<li><p>JS引擎线程</p>
+
+<ul>
+<li>负责处理解析和指向js代码</li>
+<li>只有一个JS引擎线程（单线程）</li>
+<li>与GUI渲染线程互斥</li>
+</ul></li>
+
+<li><p>事件触发线程</p>
+
+<ul>
+<li>用来控制事件循环（鼠标点击，setTimeout,ajax等）</li>
+<li>当事件满足触发条件的时候，将事件放入到JS引擎所在的执行队列中</li>
+</ul></li>
+
+<li><p>定时触发器进程</p>
+
+<ul>
+<li>setTimeout与setInterval所在的线程</li>
+<li>定时任务并不是有JS引擎计时的，是由定时器触发线程来计时的</li>
+<li>计时完毕后，通知事件触发线程</li>
+</ul></li>
+
+<li><p>异步http请求线程</p>
+
+<ul>
+<li>浏览器有一个单独的线程用于处理ajax请求</li>
+<li>当请求完成后，如果有回调函数，通知事件触发线程</li>
+</ul></li>
+</ul>
+
+<h2 id="为什么js是单线程的">为什么js是单线程的？</h2>
+
+<p>如果多线程在不加锁的情况下，同事操作DOM，最终会导致DOM的渲染结果不可预期。</p>
+
+<h2 id="为什么gui渲染引擎与js引擎互斥">为什么GUI渲染引擎与JS引擎互斥？</h2>
+
+<p>这是由于 JS 是可以操作 DOM 的，如果同时修改元素属性并同时渲染界面(即 JS线程和 UI线程同时运行)，那么渲染线程前后获得的元素就可能不一致了。</p>
+
+<p>因此，为了防止渲染出现不可预期的结果，浏览器设定 GUI渲染线程和 JS引擎线程为互斥关系，当 JS引擎线程执行时 GUI渲染线程会被挂起，GUI更新则会被保存在一个队列中等待 JS引擎线程空闲时立即被执行。</p>
+
+<h2 id="从-event-loop-看-js-的运行机制">从 Event Loop 看 JS 的运行机制</h2>
+
+<p>先理解一些概念：</p>
+
+<ul>
+<li><p>JS 分为同步任务和异步任务</p></li>
+
+<li><p>同步任务都在JS引擎线程上执行，形成一个<strong>执行栈</strong></p></li>
+
+<li><p>事件触发线程管理一个<strong>任务队列</strong>，异步任务触发条件达成，将回调事件放到 务队列中</p></li>
+
+<li><p>执行栈中所有同步任务执行完毕，此时JS引擎线程空闲，系统会读取任务队列，将可运行的异步任务回调事件添加到执行栈中，开始执行</p></li>
+</ul>
+
+<p><strong>不管是 setTimeout/setInterval和 XHR/fetch代码，在这些代码执行时，本身是同步任务，而其中的回调函数才是异步任务。</strong></p>
+
+<blockquote>
+<p>当代码执行到 setTimeout/setInterval时，实际上是 JS引擎线程通知 <strong>定时触发器线程</strong>，间隔一个时间后，会触发一个回调事件，而定时触发器线程在接收到这个消息后，会在等待的时间后，将回调事件放入到由 <strong>事件触发线程所管理的 事件队列中</strong>。</p>
+
+<p>当代码执行到 XHR/fetch时，实际上是 JS引擎线程通知 <strong>异步http请求线程</strong>，发送一个网络请求，并制定请求完成后的回调事件，而 异步http请求线程在接收到这个消息后，会在请求成功后，将回调事件放入到由<strong>事件触发线程所管理的 事件队列中</strong>。</p>
+</blockquote>
+
+<p>当我们的同步任务执行完， JS引擎线程会询问 <strong>事件触发线程</strong>，在 事件队列中是否有待执行的回调函数，如果有就会加入到执行栈中交给 <strong>JS引擎线程执行</strong>。</p>
+
+<blockquote>
+<p>JS引擎线程只执行执行栈中的事件</p>
+
+<p>执行栈中的代码执行完毕，就会读取事件队列中的事件</p>
+
+<p>事件队列中的回调事件，是由各自线程插入到事件队列中的</p>
+
+<p>如此循环</p>
+</blockquote>
+
+<h2 id="宏任务-微任务">宏任务、微任务</h2>
+
+<p><strong>我们可以将每次执行栈执行的代码当做是一个宏任务（包括每次从事件队列中获取一个事件回调并放到执行栈中执行），每一个宏任务会从头到尾执行完毕，不会执行其他。</strong></p>
+
+<p>我们前文提到过 JS引擎线程和 GUI渲染线程是互斥的关系，浏览器为了能够使 <strong>宏任务和 DOM任务</strong>有序的进行，会在一个 宏任务执行结果后，在下一个 宏任务执行前， GUI渲染线程开始工作，对页面进行渲染。</p>
+
+<p><code>宏任务--&gt;渲染--&gt;宏任务--&gt;渲染--&gt;渲染．．．</code></p>
+
+<blockquote>
+<p>主代码块，setTimeout，setInterval等，都属于宏任务</p>
+</blockquote>
+
+<p><strong>微任务可以理解成在当前 宏任务执行后立即执行的任务。</strong></p>
+
+<p>也就是说，当 宏任务执行完，会在渲染前，将执行期间所产生的所有 微任务都执行完。</p>
+
+<blockquote>
+<p>Promise，process.nextTick等，属于 微任务。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">setTimeout(()=&gt;{
+  console.log(1)
+  Promise.resolve(3).then((res) =&gt; {
+    console.log(res)
+  })
+},0)
+
+setTimeout(()=&gt;{
+  console.log(2)
+},0)
+
+// print : 1 3 2</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>上面代码共包含两个 setTimeout ，也就是说除主代码块外，共有两个 宏任务，
+其中第一个 宏任务执行中，输出 1 ，并且创建了 微任务队列，所以在下一个 宏任务队列执行前，
+先执行 微任务，在 微任务执行中，输出 3 ，微任务执行后，执行下一次 宏任务，执行中输出 2</p>
+</blockquote>
+
+<h2 id="总结">总结</h2>
+
+<p><strong>执行一个 宏任务（栈中没有就从 事件队列中获取）</strong></p>
+
+<p><strong>执行过程中如果遇到 微任务，就将它添加到 微任务的任务队列中</strong></p>
+
+<p><strong>宏任务执行完毕后，立即执行当前 微任务队列中的所有 微任务（依次执行）</strong></p>
+
+<p><strong>当前 宏任务执行完毕，开始检查渲染，然后 GUI线程接管渲染</strong></p>
+
+<p><strong>渲染完毕后， JS线程继续接管，开始下一个 宏任务（从事件队列中获取）</strong></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mo白</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-11-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
+          <a href="/tags/js/">js</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/spa%E5%8D%95%E9%A1%B5%E9%9D%A2%E4%B8%8Evue%E7%9A%84scoped/">
+            <span class="next-text nav-default">SPA与vue的scoped原理</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  <span id="/post/event-loop/" class="leancloud_visitors" data-flag-title="Event Loop的理解">
+		<span class="post-meta-item-text">文章阅读量 </span>
+		<span class="leancloud-visitors-count">0</span>
+		<p></p>
+	  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'WUBh5UkKnj6qSyM02oWYBTCL-gzGzoHsz',
+        appKey: 'lEJsli90YuTLvdiqsKi56pw6',
+        notify: 'false',
+        verify: 'false',
+        avatar:'mo白',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:1442122744@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.google.com.hk/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.weibo.com" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://www.bilibili.com/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://yangj0605.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mo白</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

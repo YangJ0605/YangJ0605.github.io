@@ -6,7 +6,7 @@
     <description>Recent content on mo白的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 01 Nov 2019 21:21:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2019 22:21:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yangj0605.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,15 @@
       
       <guid>https://yangj0605.github.io/about/</guid>
       <description>一款hugo搭建的个人使用博客~~~</description>
+    </item>
+    
+    <item>
+      <title>Event Loop的理解</title>
+      <link>https://yangj0605.github.io/post/event-loop/</link>
+      <pubDate>Wed, 20 Nov 2019 22:21:18 +0800</pubDate>
+      
+      <guid>https://yangj0605.github.io/post/event-loop/</guid>
+      <description>首先先了解以下几个概念： CPU 计算机的核心就是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。 进程 单个CPU一次只能运行一个任务。进</description>
     </item>
     
     <item>
